@@ -9,7 +9,10 @@ import SwiftUI
 
 struct FavoritePlacesView: View {
     var body: some View {
-        Text("Hello, World!")
+        List {
+
+        }
+        .navigationTitle("Favorite places")
     }
 }
 

@@ -11,7 +11,7 @@ import RealityKit
 struct ForecastView: View {
     var body: some View {
         VStack {
-            Text("Hello, world!")
+
         }
         .padding()
     }
