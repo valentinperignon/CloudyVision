@@ -11,7 +11,7 @@ import SwiftUI
 struct CloudyVisionApp: App {
     var body: some Scene {
         WindowGroup {
-            ForecastView()
+            ContentView()
         }
     }
 }

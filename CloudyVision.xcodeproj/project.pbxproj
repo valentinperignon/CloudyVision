@@ -10,6 +10,9 @@
 		A76180B42AAB927800B4FF27 /* CloudyVisionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76180B32AAB927800B4FF27 /* CloudyVisionApp.swift */; };
 		A76180B62AAB927800B4FF27 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76180B52AAB927800B4FF27 /* ForecastView.swift */; };
 		A76180B82AAB927900B4FF27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A76180B72AAB927900B4FF27 /* Assets.xcassets */; };
+		A76180C82AABABD600B4FF27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76180C72AABABD600B4FF27 /* ContentView.swift */; };
+		A76180CD2AABAD5E00B4FF27 /* CVCore in Frameworks */ = {isa = PBXBuildFile; productRef = A76180CC2AABAD5E00B4FF27 /* CVCore */; };
+		A76180D02AABAEDE00B4FF27 /* FavoritePlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76180CF2AABAEDE00B4FF27 /* FavoritePlacesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +21,9 @@
 		A76180B52AAB927800B4FF27 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
 		A76180B72AAB927900B4FF27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A76180BC2AAB927900B4FF27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A76180C72AABABD600B4FF27 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A76180CA2AABACF200B4FF27 /* CVCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CVCore; sourceTree = "<group>"; };
+		A76180CF2AABAEDE00B4FF27 /* FavoritePlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePlacesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -25,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A76180CD2AABAD5E00B4FF27 /* CVCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -35,7 +42,9 @@
 			isa = PBXGroup;
 			children = (
 				A76180AE2AAB927800B4FF27 /* CloudyVision */,
+				A76180CA2AABACF200B4FF27 /* CVCore */,
 				A76180AD2AAB927800B4FF27 /* Products */,
+				A76180CB2AABAD5900B4FF27 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,7 +62,6 @@
 				A76180B32AAB927800B4FF27 /* CloudyVisionApp.swift */,
 				A76180C22AAB929600B4FF27 /* Views */,
 				A76180C32AAB929E00B4FF27 /* Components */,
-				A76180C42AAB92A700B4FF27 /* Models */,
 				A76180C52AAB92AF00B4FF27 /* Resources */,
 			);
 			path = CloudyVision;
@@ -62,7 +70,9 @@
 		A76180C22AAB929600B4FF27 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A76180B52AAB927800B4FF27 /* ForecastView.swift */,
+				A76180C72AABABD600B4FF27 /* ContentView.swift */,
+				A76180CE2AABAEC900B4FF27 /* FavoritePlaces */,
+				A76180C62AABABC000B4FF27 /* Forecast */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -74,13 +84,6 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		A76180C42AAB92A700B4FF27 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		A76180C52AAB92AF00B4FF27 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +91,29 @@
 				A76180BC2AAB927900B4FF27 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		A76180C62AABABC000B4FF27 /* Forecast */ = {
+			isa = PBXGroup;
+			children = (
+				A76180B52AAB927800B4FF27 /* ForecastView.swift */,
+			);
+			path = Forecast;
+			sourceTree = "<group>";
+		};
+		A76180CB2AABAD5900B4FF27 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A76180CE2AABAEC900B4FF27 /* FavoritePlaces */ = {
+			isa = PBXGroup;
+			children = (
+				A76180CF2AABAEDE00B4FF27 /* FavoritePlacesView.swift */,
+			);
+			path = FavoritePlaces;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,6 +133,7 @@
 			);
 			name = CloudyVision;
 			packageProductDependencies = (
+				A76180CC2AABAD5E00B4FF27 /* CVCore */,
 			);
 			productName = CloudyVision;
 			productReference = A76180AC2AAB927800B4FF27 /* CloudyVision.app */;
@@ -163,6 +190,8 @@
 			files = (
 				A76180B62AAB927800B4FF27 /* ForecastView.swift in Sources */,
 				A76180B42AAB927800B4FF27 /* CloudyVisionApp.swift in Sources */,
+				A76180D02AABAEDE00B4FF27 /* FavoritePlacesView.swift in Sources */,
+				A76180C82AABABD600B4FF27 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +391,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A76180CC2AABAD5E00B4FF27 /* CVCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CVCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A76180A42AAB927800B4FF27 /* Project object */;
 }
