@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("didLaunchedAppBefore") private var didLauchedAppBefore = false
+
     var body: some View {
-        NavigationSplitView {
-            FavoritePlacesView()
-        } detail: {
-            ForecastView()
+        if didLauchedAppBefore {
+            NavigationSplitView {
+                FavoritePlacesView()
+            } detail: {
+                ForecastView()
+            }
+        } else {
+            OnboardingView()
         }
     }
 }

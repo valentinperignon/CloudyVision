@@ -14,6 +14,8 @@
 		A76180CD2AABAD5E00B4FF27 /* CVCore in Frameworks */ = {isa = PBXBuildFile; productRef = A76180CC2AABAD5E00B4FF27 /* CVCore */; };
 		A76180D02AABAEDE00B4FF27 /* FavoritePlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76180CF2AABAEDE00B4FF27 /* FavoritePlacesView.swift */; };
 		A76180D22AABCC6E00B4FF27 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A76180D12AABCC6E00B4FF27 /* Localizable.xcstrings */; };
+		A76180D52AABDADB00B4FF27 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76180D42AABDADB00B4FF27 /* OnboardingView.swift */; };
+		A76180D82AAC771B00B4FF27 /* AnimatableTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76180D72AAC771B00B4FF27 /* AnimatableTitle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		A76180CA2AABACF200B4FF27 /* CVCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CVCore; sourceTree = "<group>"; };
 		A76180CF2AABAEDE00B4FF27 /* FavoritePlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePlacesView.swift; sourceTree = "<group>"; };
 		A76180D12AABCC6E00B4FF27 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		A76180D42AABDADB00B4FF27 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		A76180D72AAC771B00B4FF27 /* AnimatableTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableTitle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +66,8 @@
 			isa = PBXGroup;
 			children = (
 				A76180B32AAB927800B4FF27 /* CloudyVisionApp.swift */,
+				A76180D62AAC770F00B4FF27 /* Components */,
 				A76180C22AAB929600B4FF27 /* Views */,
-				A76180C32AAB929E00B4FF27 /* Components */,
 				A76180C52AAB92AF00B4FF27 /* Resources */,
 			);
 			path = CloudyVision;
@@ -73,17 +77,11 @@
 			isa = PBXGroup;
 			children = (
 				A76180C72AABABD600B4FF27 /* ContentView.swift */,
+				A76180D32AABDAC800B4FF27 /* Onboarding */,
 				A76180CE2AABAEC900B4FF27 /* FavoritePlaces */,
 				A76180C62AABABC000B4FF27 /* Forecast */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		A76180C32AAB929E00B4FF27 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		A76180C52AAB92AF00B4FF27 /* Resources */ = {
@@ -117,6 +115,22 @@
 				A76180CF2AABAEDE00B4FF27 /* FavoritePlacesView.swift */,
 			);
 			path = FavoritePlaces;
+			sourceTree = "<group>";
+		};
+		A76180D32AABDAC800B4FF27 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A76180D42AABDADB00B4FF27 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		A76180D62AAC770F00B4FF27 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A76180D72AAC771B00B4FF27 /* AnimatableTitle.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +210,8 @@
 				A76180B62AAB927800B4FF27 /* ForecastView.swift in Sources */,
 				A76180B42AAB927800B4FF27 /* CloudyVisionApp.swift in Sources */,
 				A76180D02AABAEDE00B4FF27 /* FavoritePlacesView.swift in Sources */,
+				A76180D52AABDADB00B4FF27 /* OnboardingView.swift in Sources */,
+				A76180D82AAC771B00B4FF27 /* AnimatableTitle.swift in Sources */,
 				A76180C82AABABD600B4FF27 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
