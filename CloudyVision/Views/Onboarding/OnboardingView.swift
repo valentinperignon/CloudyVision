@@ -11,13 +11,12 @@ import SwiftUI
 struct OnboardingView: View {
     @AppStorage("didLaunchedAppBefore") private var didLauchedAppBefore = false
 
+    @Environment(LocationManager.self) private var locationManager
+
     @State private var typingCount = 0
     @State private var isShowingSubtitle = false
     @State private var isShowingLocationButton = false
-
     @State private var didAnsweredLocation = false
-
-    @State private var locationManager = LocationManager()
 
     private let appName = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as! String
 

@@ -5,21 +5,23 @@
 //  Created by Valentin Perignon on 08/09/2023.
 //
 
+import CVCore
 import SwiftUI
 
 struct ContentView: View {
     @AppStorage("didLaunchedAppBefore") private var didLauchedAppBefore = false
 
+    @State private var locationManager = LocationManager()
+
     var body: some View {
-        if didLauchedAppBefore {
-            NavigationSplitView {
-                FavoritePlacesView()
-            } detail: {
-                ForecastView()
+        Group {
+            if didLauchedAppBefore {
+                PlacesForecastView()
+            } else {
+                OnboardingView()
             }
-        } else {
-            OnboardingView()
         }
+        .environment(locationManager)
     }
 }
 

@@ -16,6 +16,7 @@
 		A76180D22AABCC6E00B4FF27 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A76180D12AABCC6E00B4FF27 /* Localizable.xcstrings */; };
 		A76180D52AABDADB00B4FF27 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76180D42AABDADB00B4FF27 /* OnboardingView.swift */; };
 		A76180D82AAC771B00B4FF27 /* AnimatableTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76180D72AAC771B00B4FF27 /* AnimatableTitle.swift */; };
+		A76180DB2AACCF8800B4FF27 /* PlacesForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76180DA2AACCF8800B4FF27 /* PlacesForecastView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		A76180D12AABCC6E00B4FF27 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		A76180D42AABDADB00B4FF27 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		A76180D72AAC771B00B4FF27 /* AnimatableTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableTitle.swift; sourceTree = "<group>"; };
+		A76180DA2AACCF8800B4FF27 /* PlacesForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesForecastView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +80,7 @@
 			children = (
 				A76180C72AABABD600B4FF27 /* ContentView.swift */,
 				A76180D32AABDAC800B4FF27 /* Onboarding */,
-				A76180CE2AABAEC900B4FF27 /* FavoritePlaces */,
-				A76180C62AABABC000B4FF27 /* Forecast */,
+				A76180D92AACCF3A00B4FF27 /* PlacesForecast */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -131,6 +132,16 @@
 				A76180D72AAC771B00B4FF27 /* AnimatableTitle.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		A76180D92AACCF3A00B4FF27 /* PlacesForecast */ = {
+			isa = PBXGroup;
+			children = (
+				A76180DA2AACCF8800B4FF27 /* PlacesForecastView.swift */,
+				A76180CE2AABAEC900B4FF27 /* FavoritePlaces */,
+				A76180C62AABABC000B4FF27 /* Forecast */,
+			);
+			path = PlacesForecast;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +221,7 @@
 				A76180B62AAB927800B4FF27 /* ForecastView.swift in Sources */,
 				A76180B42AAB927800B4FF27 /* CloudyVisionApp.swift in Sources */,
 				A76180D02AABAEDE00B4FF27 /* FavoritePlacesView.swift in Sources */,
+				A76180DB2AACCF8800B4FF27 /* PlacesForecastView.swift in Sources */,
 				A76180D52AABDADB00B4FF27 /* OnboardingView.swift in Sources */,
 				A76180D82AAC771B00B4FF27 /* AnimatableTitle.swift in Sources */,
 				A76180C82AABABD600B4FF27 /* ContentView.swift in Sources */,
