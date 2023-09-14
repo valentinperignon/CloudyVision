@@ -17,6 +17,7 @@
 		A76180D52AABDADB00B4FF27 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76180D42AABDADB00B4FF27 /* OnboardingView.swift */; };
 		A76180D82AAC771B00B4FF27 /* AnimatableTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76180D72AAC771B00B4FF27 /* AnimatableTitle.swift */; };
 		A76180DB2AACCF8800B4FF27 /* PlacesForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76180DA2AACCF8800B4FF27 /* PlacesForecastView.swift */; };
+		A76180DD2AADDF4600B4FF27 /* WeatherBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76180DC2AADDF4600B4FF27 /* WeatherBackgroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		A76180D42AABDADB00B4FF27 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		A76180D72AAC771B00B4FF27 /* AnimatableTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableTitle.swift; sourceTree = "<group>"; };
 		A76180DA2AACCF8800B4FF27 /* PlacesForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesForecastView.swift; sourceTree = "<group>"; };
+		A76180DC2AADDF4600B4FF27 /* WeatherBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherBackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				A76180D42AABDADB00B4FF27 /* OnboardingView.swift */,
+				A76180DC2AADDF4600B4FF27 /* WeatherBackgroundView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A76180B62AAB927800B4FF27 /* ForecastView.swift in Sources */,
+				A76180DD2AADDF4600B4FF27 /* WeatherBackgroundView.swift in Sources */,
 				A76180B42AAB927800B4FF27 /* CloudyVisionApp.swift in Sources */,
 				A76180D02AABAEDE00B4FF27 /* FavoritePlacesView.swift in Sources */,
 				A76180DB2AACCF8800B4FF27 /* PlacesForecastView.swift in Sources */,

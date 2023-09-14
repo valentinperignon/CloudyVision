@@ -15,31 +15,39 @@ struct OnboardingView: View {
 
     @State private var typingCount = 0
     @State private var isShowingSubtitle = false
-    @State private var isShowingLocationButton = false
-    @State private var didAnsweredLocation = false
+    @State private var isShowingButtons = false
 
     private let appName = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as! String
 
+    enum AnimationConsants {
+        static let typingDelay: TimeInterval = 1
+        static let typingDuration: TimeInterval = 4
+        static let subtitleDelay: TimeInterval = 5
+        static let buttonsDelay: TimeInterval = 6
+    }
+
     var body: some View {
-        VStack {
-            Spacer()
+        ZStack(alignment: .top) {
+            WeatherBackgroundView()
 
-            AnimatableTitle(title: appName, typingCount: typingCount)
+            VStack {
+                Spacer()
 
-            Text("Weather in a new dimension")
-                .font(.title)
-                .opacity(isShowingSubtitle ? 1 : 0)
+                AnimatableTitle(title: appName, typingCount: typingCount)
 
-            Spacer()
+                Text("Weather in a new dimension")
+                    .font(.title)
+                    .opacity(isShowingSubtitle ? 1 : 0)
+
+                Spacer()
+            }
         }
-        .frame(maxWidth: .infinity)
         .overlay(alignment: .bottom) {
             VStack(spacing: 24) {
                 Button(action: authorizeLocalization) {
                     Label("Authorize Localization", systemImage: "location")
                 }
                 .disabled(locationManager.status != .notDetermined)
-                .opacity(isShowingLocationButton ? 1 : 0)
 
                 Button(action: launchApp) {
                     Label("Launch App", systemImage: "arrow.right")
@@ -47,16 +55,17 @@ struct OnboardingView: View {
                 .padding(.bottom, 48)
                 .opacity(locationManager.status != .notDetermined ? 1 : 0)
             }
+            .opacity(isShowingButtons ? 1 : 0)
         }
         .onAppear {
-            withAnimation(.spring(duration: 4).delay(1)) {
+            withAnimation(.spring(duration: AnimationConsants.typingDuration).delay(AnimationConsants.typingDelay)) {
                 typingCount = appName.count
             }
-            withAnimation(.default.delay(5)) {
+            withAnimation(.default.delay(AnimationConsants.subtitleDelay)) {
                 isShowingSubtitle = true
             }
-            withAnimation(.default.delay(6)) {
-                isShowingLocationButton = true
+            withAnimation(.default.delay(AnimationConsants.buttonsDelay)) {
+                isShowingButtons = true
             }
         }
     }
