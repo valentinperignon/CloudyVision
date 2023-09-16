@@ -24,6 +24,8 @@ struct OnboardingView: View {
         static let typingDuration: TimeInterval = 4
         static let subtitleDelay: TimeInterval = 5
         static let buttonsDelay: TimeInterval = 6
+
+        static let cloudsInterval = buttonsDelay
     }
 
     var body: some View {
