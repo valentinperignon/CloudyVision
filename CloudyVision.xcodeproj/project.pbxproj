@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A70356072AB5E8E800AD452F /* OnboardingConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70356062AB5E8E800AD452F /* OnboardingConstants.swift */; };
 		A76180B42AAB927800B4FF27 /* CloudyVisionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76180B32AAB927800B4FF27 /* CloudyVisionApp.swift */; };
 		A76180B62AAB927800B4FF27 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76180B52AAB927800B4FF27 /* ForecastView.swift */; };
 		A76180B82AAB927900B4FF27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A76180B72AAB927900B4FF27 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A70356062AB5E8E800AD452F /* OnboardingConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingConstants.swift; sourceTree = "<group>"; };
 		A76180AC2AAB927800B4FF27 /* CloudyVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudyVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A76180B32AAB927800B4FF27 /* CloudyVisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudyVisionApp.swift; sourceTree = "<group>"; };
 		A76180B52AAB927800B4FF27 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			children = (
 				A76180D42AABDADB00B4FF27 /* OnboardingView.swift */,
 				A76180DC2AADDF4600B4FF27 /* WeatherBackgroundView.swift */,
+				A70356062AB5E8E800AD452F /* OnboardingConstants.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A70356072AB5E8E800AD452F /* OnboardingConstants.swift in Sources */,
 				A76180B62AAB927800B4FF27 /* ForecastView.swift in Sources */,
 				A76180DD2AADDF4600B4FF27 /* WeatherBackgroundView.swift in Sources */,
 				A76180B42AAB927800B4FF27 /* CloudyVisionApp.swift in Sources */,

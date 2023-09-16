@@ -19,15 +19,6 @@ struct OnboardingView: View {
 
     private let appName = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as! String
 
-    enum AnimationConsants {
-        static let typingDelay: TimeInterval = 1
-        static let typingDuration: TimeInterval = 4
-        static let subtitleDelay: TimeInterval = 5
-        static let buttonsDelay: TimeInterval = 6
-
-        static let cloudsInterval = buttonsDelay
-    }
-
     var body: some View {
         ZStack(alignment: .top) {
             WeatherBackgroundView()
@@ -60,13 +51,13 @@ struct OnboardingView: View {
             .opacity(isShowingButtons ? 1 : 0)
         }
         .onAppear {
-            withAnimation(.spring(duration: AnimationConsants.typingDuration).delay(AnimationConsants.typingDelay)) {
+            withAnimation(.spring(duration: OnboardingConstants.typingDuration).delay(OnboardingConstants.typingDelay)) {
                 typingCount = appName.count
             }
-            withAnimation(.default.delay(AnimationConsants.subtitleDelay)) {
+            withAnimation(.default.delay(OnboardingConstants.subtitleDelay)) {
                 isShowingSubtitle = true
             }
-            withAnimation(.default.delay(AnimationConsants.buttonsDelay)) {
+            withAnimation(.default.delay(OnboardingConstants.buttonsDelay)) {
                 isShowingButtons = true
             }
         }

@@ -32,32 +32,24 @@ final class Sky {
 
     private static let availableClouds: [ImageResource] = [.cloud1, .cloud2, .cloud3, .cloud4]
 
-    private static let numberOfCloudsPerEdge = 20
-    private static let widthRange: ClosedRange<CGFloat> = 0.15...0.30
-    private static let xLeadingStartPoint: CGFloat = -0.40
-    private static let xLeadingAxis: ClosedRange<CGFloat> = -0.10...0.40
-    private static let xTrailinggStartPoint: CGFloat = 1.10
-    private static let xTrailingAxis: ClosedRange<CGFloat> = 0.40...1.05
-    private static let yAxis: ClosedRange<CGFloat> = -0.05...0.18
-
     init() {
-        for _ in 0..<Self.numberOfCloudsPerEdge {
-            clouds.append(generateCloud(xStartPoint: Self.xLeadingStartPoint, xAxis: Self.xLeadingAxis))
+        for _ in 0..<OnboardingConstants.numberOfCloudsPerEdge {
+            clouds.append(generateCloud(.leading))
         }
-        for _ in 0..<Self.numberOfCloudsPerEdge {
-            clouds.append(generateCloud(xStartPoint: Self.xTrailinggStartPoint, xAxis: Self.xTrailingAxis))
+        for _ in 0..<OnboardingConstants.numberOfCloudsPerEdge {
+            clouds.append(generateCloud(.trailing))
         }
     }
 
-    private func generateCloud(xStartPoint: CGFloat, xAxis: ClosedRange<CGFloat>) -> Cloud {
+    private func generateCloud(_ edge: Edge) -> Cloud {
         let resource = Self.availableClouds.randomElement()!
 
-        let y = CGFloat.random(in: Self.yAxis)
+        let y = CGFloat.random(in: OnboardingConstants.yAxis)
 
-        let start = CGPoint(x: xStartPoint, y: y)
-        let destination = CGPoint(x: .random(in: xAxis), y: y)
+        let start = CGPoint(x: OnboardingConstants.xStartPoint[edge]!, y: y)
+        let destination = CGPoint(x: .random(in: OnboardingConstants.xAxis[edge]!), y: y)
 
-        let width = CGFloat.random(in: Self.widthRange)
+        let width = CGFloat.random(in: OnboardingConstants.widthRange)
         let size = CGSize(width: width, height: width / 2)
 
         return Cloud(resource: resource, start: start, destination: destination, size: size)
@@ -65,10 +57,10 @@ final class Sky {
 
     func update(to date: Date) {
         let delta = date.timeIntervalSinceReferenceDate - creationDate.timeIntervalSinceReferenceDate
-        guard delta <= OnboardingView.AnimationConsants.cloudsInterval else { return }
+        guard delta <= OnboardingConstants.cloudsInterval else { return }
 
         for cloud in clouds {
-            let xTraveled = (cloud.vector.dx * delta) / OnboardingView.AnimationConsants.cloudsInterval
+            let xTraveled = (cloud.vector.dx * delta) / OnboardingConstants.cloudsInterval
             cloud.position = CGPoint(x: cloud.start.x + xTraveled, y: cloud.position.y)
         }
     }
