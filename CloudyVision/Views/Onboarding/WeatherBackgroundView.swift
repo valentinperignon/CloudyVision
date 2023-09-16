@@ -35,14 +35,17 @@ final class Sky {
 
     private static let availableClouds: [ImageResource] = [.cloud1, .cloud2, .cloud3, .cloud4]
 
-    private static let numberOfCloudsPerEdge = 16
-    private static let widthRange: ClosedRange<CGFloat> = 0.15...0.3
-    private static let xLeadingStartingPoint: CGFloat = -0.3
-    private static let xLeadingAxis: ClosedRange<CGFloat> = -0.05...0.4
-    private static let yAxis: ClosedRange<CGFloat> = -0.05...0.15
+    private static let numberOfCloudsPerEdge = 20
+    private static let widthRange: ClosedRange<CGFloat> = 0.15...0.30
+    private static let xLeadingStartingPoint: CGFloat = -0.40
+    private static let xLeadingAxis: ClosedRange<CGFloat> = -0.10...0.40
+    private static let xTrailinggStartingPoint: CGFloat = 1.10
+    private static let xTrailingAxis: ClosedRange<CGFloat> = 0.40...1.05
+    private static let yAxis: ClosedRange<CGFloat> = -0.05...0.18
 
     init() {
         generateLeadingClouds()
+        generateTrailingClouds()
     }
 
     private func generateLeadingClouds() {
@@ -66,27 +69,33 @@ final class Sky {
     }
 
     private func generateTrailingClouds() {
-        // TODO: Generate trailing clouds
+        let edge = Edge.trailing
+
+        for _ in (0..<Self.numberOfCloudsPerEdge) {
+            guard let resource = Self.availableClouds.randomElement() else { continue }
+
+            let y = CGFloat.random(in: Self.yAxis)
+
+            let start = CGPoint(x: Self.xTrailinggStartingPoint, y: y)
+            let xDestination = CGFloat.random(in: Self.xTrailingAxis)
+            let destination = CGPoint(x: xDestination, y: y)
+
+            let width = CGFloat.random(in: Self.widthRange)
+            let size = CGSize(width: width, height: width / 2)
+
+            let cloud = Cloud(resource: resource, start: start, destination: destination, size: size, edge: edge)
+            clouds.append(cloud)
+        }
     }
 
     func update(to date: Date) {
         let delta = date.timeIntervalSinceReferenceDate - creationDate.timeIntervalSinceReferenceDate
         guard delta <= OnboardingView.AnimationConsants.cloudsInterval else { return }
 
-        print(delta)
-
         for cloud in clouds {
-            if cloud.edge == .leading {
-                updateLeading(cloud: cloud, delta: delta)
-            } else {
-                // Hehe
-            }
+            let xTraveled = (cloud.vector.dx * delta) / OnboardingView.AnimationConsants.cloudsInterval
+            cloud.position = CGPoint(x: cloud.start.x + xTraveled, y: cloud.position.y)
         }
-    }
-
-    private func updateLeading(cloud: Cloud, delta: TimeInterval) {
-        let xTraveled = (cloud.vector.dx * delta) / OnboardingView.AnimationConsants.cloudsInterval
-        cloud.position = CGPoint(x: cloud.start.x + xTraveled, y: cloud.position.y)
     }
 }
 
