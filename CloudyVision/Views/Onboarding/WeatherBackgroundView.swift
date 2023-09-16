@@ -10,19 +10,15 @@ import SwiftUI
 final class Cloud {
     let resource: ImageResource
     let start: CGPoint
-    let destination: CGPoint
     let size: CGSize
-    let edge: Edge
     let vector: CGVector
 
     var position: CGPoint
 
-    init(resource: ImageResource, start: CGPoint, destination: CGPoint, size: CGSize, edge: Edge) {
+    init(resource: ImageResource, start: CGPoint, destination: CGPoint, size: CGSize) {
         self.resource = resource
-        self.start = start
-        self.destination = destination
         self.size = size
-        self.edge = edge
+        self.start = start
 
         position = start
         vector = CGVector(dx: destination.x - start.x, dy: 0)
@@ -31,61 +27,40 @@ final class Cloud {
 
 final class Sky {
     let creationDate = Date()
+
     var clouds = [Cloud]()
 
     private static let availableClouds: [ImageResource] = [.cloud1, .cloud2, .cloud3, .cloud4]
 
     private static let numberOfCloudsPerEdge = 20
     private static let widthRange: ClosedRange<CGFloat> = 0.15...0.30
-    private static let xLeadingStartingPoint: CGFloat = -0.40
+    private static let xLeadingStartPoint: CGFloat = -0.40
     private static let xLeadingAxis: ClosedRange<CGFloat> = -0.10...0.40
-    private static let xTrailinggStartingPoint: CGFloat = 1.10
+    private static let xTrailinggStartPoint: CGFloat = 1.10
     private static let xTrailingAxis: ClosedRange<CGFloat> = 0.40...1.05
     private static let yAxis: ClosedRange<CGFloat> = -0.05...0.18
 
     init() {
-        generateLeadingClouds()
-        generateTrailingClouds()
-    }
-
-    private func generateLeadingClouds() {
-        let edge = Edge.leading
-
-        for _ in (0..<Self.numberOfCloudsPerEdge) {
-            guard let resource = Self.availableClouds.randomElement() else { continue }
-
-            let y = CGFloat.random(in: Self.yAxis)
-
-            let start = CGPoint(x: Self.xLeadingStartingPoint, y: y)
-            let xDestination = CGFloat.random(in: Self.xLeadingAxis)
-            let destination = CGPoint(x: xDestination, y: y)
-
-            let width = CGFloat.random(in: Self.widthRange)
-            let size = CGSize(width: width, height: width / 2)
-
-            let cloud = Cloud(resource: resource, start: start, destination: destination, size: size, edge: edge)
-            clouds.append(cloud)
+        for _ in 0..<Self.numberOfCloudsPerEdge {
+            clouds.append(generateCloud(xStartPoint: Self.xLeadingStartPoint, xAxis: Self.xLeadingAxis))
+        }
+        for _ in 0..<Self.numberOfCloudsPerEdge {
+            clouds.append(generateCloud(xStartPoint: Self.xTrailinggStartPoint, xAxis: Self.xTrailingAxis))
         }
     }
 
-    private func generateTrailingClouds() {
-        let edge = Edge.trailing
+    private func generateCloud(xStartPoint: CGFloat, xAxis: ClosedRange<CGFloat>) -> Cloud {
+        let resource = Self.availableClouds.randomElement()!
 
-        for _ in (0..<Self.numberOfCloudsPerEdge) {
-            guard let resource = Self.availableClouds.randomElement() else { continue }
+        let y = CGFloat.random(in: Self.yAxis)
 
-            let y = CGFloat.random(in: Self.yAxis)
+        let start = CGPoint(x: xStartPoint, y: y)
+        let destination = CGPoint(x: .random(in: xAxis), y: y)
 
-            let start = CGPoint(x: Self.xTrailinggStartingPoint, y: y)
-            let xDestination = CGFloat.random(in: Self.xTrailingAxis)
-            let destination = CGPoint(x: xDestination, y: y)
+        let width = CGFloat.random(in: Self.widthRange)
+        let size = CGSize(width: width, height: width / 2)
 
-            let width = CGFloat.random(in: Self.widthRange)
-            let size = CGSize(width: width, height: width / 2)
-
-            let cloud = Cloud(resource: resource, start: start, destination: destination, size: size, edge: edge)
-            clouds.append(cloud)
-        }
+        return Cloud(resource: resource, start: start, destination: destination, size: size)
     }
 
     func update(to date: Date) {
@@ -109,7 +84,6 @@ struct WeatherBackgroundView: View {
                 context.opacity = 0.8
 
                 for cloud in sky.clouds {
-                    let resolvedImage = context.resolve(Image(cloud.resource))
                     let rect = CGRect(
                         x: size.width * cloud.position.x,
                         y: size.height * cloud.position.y,
@@ -117,7 +91,7 @@ struct WeatherBackgroundView: View {
                         height: size.height * cloud.size.height
                     )
 
-                    context.draw(resolvedImage, in: rect)
+                    context.draw(Image(cloud.resource), in: rect)
                 }
             }
         }
