@@ -20,7 +20,8 @@ enum OnboardingConstants {
 
     // MARK: - Canvas
 
-    static let numberOfCloudsPerEdge = 20
+    static let numberOfCloudsPerEdge = Int.random(in: 18...22)
+
     static let widthRange: ClosedRange<CGFloat> = 0.15...0.30
     static let xStartPoint: [Edge: CGFloat] = [.leading: -0.40, .trailing: 1.10]
     static let xAxis: [Edge: ClosedRange<CGFloat>] = [.leading:  -0.10...0.40, .trailing: 0.40...1.05]

@@ -73,6 +73,18 @@ struct WeatherBackgroundView: View {
         TimelineView(.animation) { timelineContext in
             Canvas { context, size in
                 sky.update(to: timelineContext.date)
+
+                let sunSize: CGFloat = 176
+                let xSun = size.width * 0.7
+                let ySun = -(sunSize / 2) - 4
+
+                let sun = Circle().path(in: CGRect(x: xSun, y: ySun, width: sunSize, height: sunSize))
+                context.fill(sun,
+                             with: .radialGradient(Gradient(colors: [.yellow, .yellow.opacity(0.7), .yellow.opacity(0)]),
+                                                   center: CGPoint(x: xSun + sunSize / 2, y: ySun + sunSize / 2),
+                                                   startRadius: 40,
+                                                   endRadius: 88))
+
                 context.opacity = 0.8
 
                 for cloud in sky.clouds {
