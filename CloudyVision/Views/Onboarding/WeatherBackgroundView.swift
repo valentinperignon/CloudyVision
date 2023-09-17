@@ -44,12 +44,12 @@ final class Sky {
     private func generateCloud(_ edge: Edge) -> Cloud {
         let resource = Self.availableClouds.randomElement()!
 
-        let y = CGFloat.random(in: OnboardingConstants.yAxis)
+        let y = CGFloat.random(in: OnboardingConstants.cloudsYAxis)
 
-        let start = CGPoint(x: OnboardingConstants.xStartPoint[edge]!, y: y)
-        let destination = CGPoint(x: .random(in: OnboardingConstants.xAxis[edge]!), y: y)
+        let start = CGPoint(x: OnboardingConstants.cloudsXStartPoint[edge]!, y: y)
+        let destination = CGPoint(x: .random(in: OnboardingConstants.cloudsXAxis[edge]!), y: y)
 
-        let width = CGFloat.random(in: OnboardingConstants.widthRange)
+        let width = CGFloat.random(in: OnboardingConstants.cloudsWidthRange)
         let size = CGSize(width: width, height: width / 2)
 
         return Cloud(resource: resource, start: start, destination: destination, size: size)
@@ -74,30 +74,38 @@ struct WeatherBackgroundView: View {
             Canvas { context, size in
                 sky.update(to: timelineContext.date)
 
-                let sunSize: CGFloat = 176
-                let xSun = size.width * 0.7
-                let ySun = -(sunSize / 2) - 4
-
-                let sun = Circle().path(in: CGRect(x: xSun, y: ySun, width: sunSize, height: sunSize))
-                context.fill(sun,
-                             with: .radialGradient(Gradient(colors: [.yellow, .yellow.opacity(0.7), .yellow.opacity(0)]),
-                                                   center: CGPoint(x: xSun + sunSize / 2, y: ySun + sunSize / 2),
-                                                   startRadius: 40,
-                                                   endRadius: 88))
+                drawSun(in: context, with: size)
 
                 context.opacity = 0.8
-
-                for cloud in sky.clouds {
-                    let rect = CGRect(
-                        x: size.width * cloud.position.x,
-                        y: size.height * cloud.position.y,
-                        width: size.width * cloud.size.width,
-                        height: size.height * cloud.size.height
-                    )
-
-                    context.draw(Image(cloud.resource), in: rect)
-                }
+                drawClouds(in: context, with: size)
             }
+        }
+    }
+
+    private func drawSun(in context: GraphicsContext, with size: CGSize) {
+        let rect = CGRect(x: OnboardingConstants.sunX * size.width,
+                          y: OnboardingConstants.sunY,
+                          width: OnboardingConstants.sunSize.width,
+                          height: OnboardingConstants.sunSize.height)
+
+        let sun = Circle().path(in: rect)
+        context.fill(sun,
+                     with: .radialGradient(Gradient(colors: [.yellow, .yellow.opacity(0.7), .clear]),
+                                           center: rect.center,
+                                           startRadius: OnboardingConstants.sunRadius / 2,
+                                           endRadius: OnboardingConstants.sunRadius))
+    }
+
+    private func drawClouds(in context: GraphicsContext, with size: CGSize) {
+        for cloud in sky.clouds {
+            let rect = CGRect(
+                x: size.width * cloud.position.x,
+                y: size.height * cloud.position.y,
+                width: size.width * cloud.size.width,
+                height: size.height * cloud.size.height
+            )
+
+            context.draw(Image(cloud.resource), in: rect)
         }
     }
 }

@@ -20,10 +20,19 @@ enum OnboardingConstants {
 
     // MARK: - Canvas
 
+    // Sun
+
+    static let sunSize = CGSize(width: 176, height: 176)
+    static let sunX = 0.7
+    static let sunY = -(sunSize.height / 2) - 10
+    static let sunRadius = sunSize.width / 2
+
+    // Clouds
+
     static let numberOfCloudsPerEdge = Int.random(in: 18...22)
 
-    static let widthRange: ClosedRange<CGFloat> = 0.15...0.30
-    static let xStartPoint: [Edge: CGFloat] = [.leading: -0.40, .trailing: 1.10]
-    static let xAxis: [Edge: ClosedRange<CGFloat>] = [.leading:  -0.10...0.40, .trailing: 0.40...1.05]
-    static let yAxis: ClosedRange<CGFloat> = -0.05...0.18
+    static let cloudsWidthRange: ClosedRange<CGFloat> = 0.15...0.30
+    static let cloudsXStartPoint: [Edge: CGFloat] = [.leading: -0.40, .trailing: 1.10]
+    static let cloudsXAxis: [Edge: ClosedRange<CGFloat>] = [.leading:  -0.10...0.40, .trailing: 0.40...1.05]
+    static let cloudsYAxis: ClosedRange<CGFloat> = -0.05...0.18
 }
