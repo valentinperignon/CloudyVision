@@ -29,6 +29,7 @@ final class Sky {
     let creationDate = Date()
 
     var clouds = [Cloud]()
+    var sunOpacity = 0.0
 
     private static let availableClouds: [ImageResource] = [.cloud1, .cloud2, .cloud3, .cloud4]
 
@@ -57,6 +58,9 @@ final class Sky {
 
     func update(to date: Date) {
         let delta = date.timeIntervalSinceReferenceDate - creationDate.timeIntervalSinceReferenceDate
+
+        sunOpacity = max(0, min(delta - OnboardingConstants.sunStartAppearance, 1))
+
         guard delta <= OnboardingConstants.cloudsInterval else { return }
 
         for cloud in clouds {
@@ -74,6 +78,7 @@ struct WeatherBackgroundView: View {
             Canvas { context, size in
                 sky.update(to: timelineContext.date)
 
+                context.opacity = sky.sunOpacity
                 drawSun(in: context, with: size)
 
                 context.opacity = 0.8

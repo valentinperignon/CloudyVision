@@ -17,6 +17,7 @@ enum OnboardingConstants {
     static let buttonsDelay: TimeInterval = 6
 
     static let cloudsInterval = buttonsDelay
+    static let sunStartAppearance = typingDuration
 
     // MARK: - Canvas
 
