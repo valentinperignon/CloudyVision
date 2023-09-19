@@ -81,6 +81,18 @@ struct WeatherBackgroundView: View {
                 context.opacity = sky.sunOpacity
                 drawSun(in: context, with: size)
 
+                context.opacity = 1
+                let rainbowPath = Path { path in
+                    let startPoint = CGPoint(x: 0, y: size.height * 0.7)
+                    let endPoint = CGPoint(x: size.width, y: size.height * 0.7)
+
+                    path.move(to: startPoint)
+                    path.addCurve(to: endPoint,
+                                  control1: startPoint.applying(.init(translationX: size.width * 0.15, y: -size.height * 0.5)),
+                                  control2: endPoint.applying(.init(translationX: -size.width * 0.15, y: -size.height * 0.5)))
+                }
+                context.stroke(rainbowPath, with: .color(.blue))
+
                 context.opacity = 0.8
                 drawClouds(in: context, with: size)
             }
