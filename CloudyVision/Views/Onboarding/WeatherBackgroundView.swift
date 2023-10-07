@@ -101,21 +101,6 @@ struct WeatherBackgroundView: View {
                                            endRadius: OnboardingConstants.sunRadius))
     }
 
-    private func drawRainbow(in context: inout GraphicsContext, with size: CGSize) {
-        context.opacity = 1
-
-        let rainbowPath = Path { path in
-            let startPoint = CGPoint(x: 0, y: size.height * 0.7)
-            let endPoint = CGPoint(x: size.width, y: size.height * 0.7)
-
-            path.move(to: startPoint)
-            path.addCurve(to: endPoint,
-                          control1: startPoint.applying(.init(translationX: size.width * 0.15, y: -size.height * 0.5)),
-                          control2: endPoint.applying(.init(translationX: -size.width * 0.15, y: -size.height * 0.5)))
-        }
-        context.stroke(rainbowPath, with: .color(.blue))
-    }
-
     private func drawClouds(in context: inout GraphicsContext, with size: CGSize) {
         context.opacity = 0.8
 
@@ -129,6 +114,48 @@ struct WeatherBackgroundView: View {
 
             context.draw(Image(cloud.resource), in: rect)
         }
+    }
+
+    private func drawRainbow(in context: inout GraphicsContext, with size: CGSize) {
+        let layers: [(color: Color, opacity: CGFloat)] = [
+            (.purple, 0.2), (.indigo, 0.2), (.blue, 0.2), (.green, 0.3), (.yellow, 0.3), (.orange, 0.3), (.red, 0.3)
+        ]
+
+        for index in layers.indices {
+            let layer = layers[index]
+
+            context.opacity = layer.opacity
+            drawRaibowColor(in: context, with: size, index: index, color: layer.color)
+        }
+    }
+
+    private func drawRaibowColor(in context: GraphicsContext, with size: CGSize, index: Int, color: Color) {
+        let colorSize: CGFloat = 16
+
+        let leadingPoint = CGPoint(x: 0, y: size.height * 0.7 - colorSize * CGFloat(index))
+        let trailingPoint = CGPoint(x: size.width, y: size.height * 0.7 - colorSize *  CGFloat(index))
+
+        let curvePath = Path { path in
+            let leadingTranslation = CGAffineTransform(translationX: size.width * 0.2, y: -size.height * 0.5 + colorSize * CGFloat(index) * 0.33)
+            let trailingTransition = CGAffineTransform(translationX: size.width * -0.2, y: size.height * -0.5 + colorSize * CGFloat(index) * 0.33)
+
+            path.move(to: leadingPoint)
+            path.addCurve(to: trailingPoint, control1: leadingPoint.applying(leadingTranslation), control2: trailingPoint.applying(trailingTransition))
+
+            let upperTrailingPoint = trailingPoint.applying(.init(translationX: colorSize, y: 0))
+            let upperLeadingPoint = leadingPoint.applying(.init(translationX: -colorSize, y: 0))
+
+            path.addLine(to: upperTrailingPoint)
+
+            let upperTrailingTranslation = trailingTransition.translatedBy(x: 0, y: -colorSize)
+            let upperLeadingTranslation = leadingTranslation.translatedBy(x: 0, y: -colorSize)
+
+            path.addCurve(to: upperLeadingPoint, control1: upperTrailingPoint.applying(upperTrailingTranslation), control2: upperLeadingPoint.applying(upperLeadingTranslation))
+
+            path.addLine(to: leadingPoint)
+        }
+
+        context.fill(curvePath, with: .color(color))
     }
 }
 
