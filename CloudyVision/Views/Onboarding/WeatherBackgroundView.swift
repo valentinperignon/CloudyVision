@@ -78,14 +78,14 @@ struct WeatherBackgroundView: View {
             Canvas { context, size in
                 sky.update(to: timelineContext.date)
 
-                drawSun(in: &context, with: size, sky: sky)
+                drawSun(in: &context, with: size)
                 drawRainbow(in: &context, with: size)
                 drawClouds(in: &context, with: size)
             }
         }
     }
 
-    private func drawSun(in context: inout GraphicsContext, with size: CGSize, sky: Sky) {
+    private func drawSun(in context: inout GraphicsContext, with size: CGSize) {
         context.opacity = sky.sunOpacity
 
         let rect = CGRect(x: OnboardingConstants.sunX * size.width,
@@ -118,13 +118,13 @@ struct WeatherBackgroundView: View {
 
     private func drawRainbow(in context: inout GraphicsContext, with size: CGSize) {
         let layers: [(color: Color, opacity: CGFloat)] = [
-            (.purple, 0.2), (.indigo, 0.2), (.blue, 0.2), (.green, 0.3), (.yellow, 0.3), (.orange, 0.3), (.red, 0.3)
+            (.purple, 0.15), (.indigo, 0.1), (.blue, 0.1), (.green, 0.15), (.yellow, 0.2), (.orange, 0.2), (.red, 0.2)
         ]
 
         for index in layers.indices {
             let layer = layers[index]
 
-            context.opacity = layer.opacity
+            context.opacity = layer.opacity * sky.sunOpacity
             drawRaibowColor(in: context, with: size, index: index, color: layer.color)
         }
     }
