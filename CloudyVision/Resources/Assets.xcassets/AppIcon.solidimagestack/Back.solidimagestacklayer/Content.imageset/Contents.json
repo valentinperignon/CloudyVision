@@ -1,8 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "icon-back.png",
-      "idiom" : "reality",
+      "filename" : "background.png",
+      "idiom" : "vision",
       "scale" : "2x"
     }
   ],

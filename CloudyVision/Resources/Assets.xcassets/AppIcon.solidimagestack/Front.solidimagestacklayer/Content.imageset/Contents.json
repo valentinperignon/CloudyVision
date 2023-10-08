@@ -1,8 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "icon-front.png",
-      "idiom" : "reality",
+      "filename" : "Front.png",
+      "idiom" : "vision",
       "scale" : "2x"
     }
   ],
