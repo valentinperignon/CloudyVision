@@ -10,7 +10,7 @@ import Foundation
 
 @Observable
 final public class LocationManager: NSObject {
-    private(set) var manager = CLLocationManager()
+    private let manager = CLLocationManager()
 
     public var status = CLAuthorizationStatus.notDetermined
     public var location: CLLocation?

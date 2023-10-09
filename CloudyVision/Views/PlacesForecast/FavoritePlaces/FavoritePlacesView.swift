@@ -12,7 +12,6 @@ struct FavoritePlacesView: View {
         List {
 
         }
-        .navigationTitle("Favorite places")
     }
 }
 
