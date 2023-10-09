@@ -7,6 +7,7 @@
 
 import CoreLocation
 import Foundation
+import OSLog
 
 @Observable
 final public class LocationManager: NSObject {
@@ -18,6 +19,7 @@ final public class LocationManager: NSObject {
     public override init() {
         super.init()
         manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
     }
 
     public func requestAuthorization() {
@@ -36,5 +38,9 @@ extension LocationManager: CLLocationManagerDelegate {
 
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         location = locations.first
+    }
+
+    public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        Logger.locationManager.error("\(error.localizedDescription)")
     }
 }
