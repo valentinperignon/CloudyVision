@@ -15,7 +15,7 @@ struct PlacesSidebarView: View {
             if search.isEmpty {
                 FavoritePlacesView()
             } else {
-                Text(verbatim: "Search goes here")
+                SearchPlacesView(search: search)
             }
         }
         .searchable(text: $search)

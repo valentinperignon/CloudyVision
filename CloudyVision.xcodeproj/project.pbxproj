@@ -10,6 +10,7 @@
 		A70356072AB5E8E800AD452F /* OnboardingConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70356062AB5E8E800AD452F /* OnboardingConstants.swift */; };
 		A703560A2AB75EF300AD452F /* CGRect+Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70356092AB75EF300AD452F /* CGRect+Center.swift */; };
 		A719B6E22AD5E05000DC5CAA /* PlacesSidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A719B6E12AD5E05000DC5CAA /* PlacesSidebarView.swift */; };
+		A74A33252ADAA05C002B2B77 /* SearchPlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74A33242ADAA05C002B2B77 /* SearchPlacesView.swift */; };
 		A76180B42AAB927800B4FF27 /* CloudyVisionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76180B32AAB927800B4FF27 /* CloudyVisionApp.swift */; };
 		A76180B62AAB927800B4FF27 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76180B52AAB927800B4FF27 /* ForecastView.swift */; };
 		A76180B82AAB927900B4FF27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A76180B72AAB927900B4FF27 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 		A70356062AB5E8E800AD452F /* OnboardingConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingConstants.swift; sourceTree = "<group>"; };
 		A70356092AB75EF300AD452F /* CGRect+Center.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Center.swift"; sourceTree = "<group>"; };
 		A719B6E12AD5E05000DC5CAA /* PlacesSidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesSidebarView.swift; sourceTree = "<group>"; };
+		A74A33242ADAA05C002B2B77 /* SearchPlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlacesView.swift; sourceTree = "<group>"; };
 		A76180AC2AAB927800B4FF27 /* CloudyVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudyVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A76180B32AAB927800B4FF27 /* CloudyVisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudyVisionApp.swift; sourceTree = "<group>"; };
 		A76180B52AAB927800B4FF27 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			children = (
 				A76180CF2AABAEDE00B4FF27 /* FavoritePlacesView.swift */,
 				A719B6E12AD5E05000DC5CAA /* PlacesSidebarView.swift */,
+				A74A33242ADAA05C002B2B77 /* SearchPlacesView.swift */,
 			);
 			path = PlacesSidebar;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				A76180B62AAB927800B4FF27 /* ForecastView.swift in Sources */,
 				A76180DD2AADDF4600B4FF27 /* WeatherBackgroundView.swift in Sources */,
 				A76180B42AAB927800B4FF27 /* CloudyVisionApp.swift in Sources */,
+				A74A33252ADAA05C002B2B77 /* SearchPlacesView.swift in Sources */,
 				A76180D02AABAEDE00B4FF27 /* FavoritePlacesView.swift in Sources */,
 				A76180DB2AACCF8800B4FF27 /* PlacesForecastView.swift in Sources */,
 				A76180D52AABDADB00B4FF27 /* OnboardingView.swift in Sources */,
