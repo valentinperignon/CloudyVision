@@ -5,6 +5,8 @@
 //  Created by Valentin Perignon on 08/09/2023.
 //
 
+import CVCore
+import SwiftData
 import SwiftUI
 
 @main
@@ -12,6 +14,7 @@ struct CloudyVisionApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .modelContainer(for: [Place.self])
         }
     }
 }

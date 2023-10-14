@@ -5,15 +5,22 @@
 //  Created by Valentin Perignon on 10/10/2023.
 //
 
-import Foundation
 import CoreLocation
+import Foundation
+import SwiftData
 
-public final class Place {
-    public let location: CLLocation
+@Model
+public final class Place: Identifiable {
+    public var id: Int { coordinate.hashValue }
     public let name: String
+    public let coordinate: Coordinate
 
-    public init(location: CLLocation, name: String) {
-        self.location = location
+    public init(name: String, coordinate: Coordinate) {
         self.name = name
+        self.coordinate = coordinate
+    }
+
+    public convenience init(location: CLLocation) {
+        self.init(name: "From CLLocation", coordinate: Coordinate(from: location))
     }
 }
