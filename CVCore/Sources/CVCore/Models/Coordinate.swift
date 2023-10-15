@@ -9,8 +9,7 @@ import CoreLocation
 import Foundation
 import SwiftData
 
-@Model
-public final class Coordinate: Hashable {
+public struct Coordinate: Codable, Hashable {
     public let latitude: Double
     public let longitude: Double
 

@@ -11,16 +11,22 @@ import SwiftData
 
 @Model
 public final class Place: Identifiable {
+    @Transient
     public var id: Int { coordinate.hashValue }
+
     public let name: String
     public let coordinate: Coordinate
 
-    public init(name: String, coordinate: Coordinate) {
+    @Transient
+    public var isCurrentLocation = false
+
+    public init(name: String, coordinate: Coordinate, isCurrentLocation: Bool = false) {
         self.name = name
         self.coordinate = coordinate
+        self.isCurrentLocation = isCurrentLocation
     }
 
-    public convenience init(location: CLLocation) {
-        self.init(name: "From CLLocation", coordinate: Coordinate(from: location))
+    public convenience init(location: CLLocation, isCurrentLocation: Bool = false) {
+        self.init(name: "From CLLocation", coordinate: Coordinate(from: location), isCurrentLocation: isCurrentLocation)
     }
 }
