@@ -9,13 +9,20 @@ import CVCore
 import SwiftUI
 
 struct PlacesForecastView: View {
+    @Environment(LocationManager.self) private var locationManager
+
     @State private var currentPlace: Place?
 
     var body: some View {
         NavigationSplitView {
-            PlacesSidebarView()
+            PlacesListView()
         } detail: {
             ForecastView()
+        }
+        .onAppear {
+            if locationManager.status == .authorizedWhenInUse {
+                locationManager.requestLocation()
+            }
         }
     }
 }

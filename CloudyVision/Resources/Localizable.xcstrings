@@ -38,6 +38,9 @@
         }
       }
     },
+    "Weather" : {
+
+    },
     "Weather in a new dimension" : {
       "localizations" : {
         "fr" : {
