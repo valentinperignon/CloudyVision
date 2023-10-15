@@ -20,6 +20,13 @@ public final class Place: Identifiable {
     @Transient
     public var isCurrentLocation = false
 
+    public var iconName: String {
+        if isCurrentLocation {
+            return "location"
+        }
+        return "building.2"
+    }
+
     public init(name: String, coordinate: Coordinate, isCurrentLocation: Bool = false) {
         self.name = name
         self.coordinate = coordinate

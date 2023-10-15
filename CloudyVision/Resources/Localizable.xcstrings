@@ -11,15 +11,19 @@
         }
       }
     },
+    "Current Location" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Localisation Actuelle"
+          }
+        }
+      }
+    },
     "Favorite places" : {
       "extractionState" : "manual",
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Favorite places"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -39,7 +43,14 @@
       }
     },
     "Weather" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Météo"
+          }
+        }
+      }
     },
     "Weather in a new dimension" : {
       "localizations" : {
