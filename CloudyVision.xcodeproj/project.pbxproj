@@ -13,6 +13,7 @@
 		A74A33272ADBF37C002B2B77 /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74A33262ADBF37C002B2B77 /* PlaceCell.swift */; };
 		A74A332B2ADC35A5002B2B77 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74A332A2ADC35A5002B2B77 /* SidebarView.swift */; };
 		A74A332D2ADC369E002B2B77 /* PlacesSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74A332C2ADC369E002B2B77 /* PlacesSearchView.swift */; };
+		A74A332F2ADDD402002B2B77 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74A332E2ADDD402002B2B77 /* SearchResultCell.swift */; };
 		A76180B42AAB927800B4FF27 /* CloudyVisionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76180B32AAB927800B4FF27 /* CloudyVisionApp.swift */; };
 		A76180B62AAB927800B4FF27 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76180B52AAB927800B4FF27 /* ForecastView.swift */; };
 		A76180B82AAB927900B4FF27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A76180B72AAB927900B4FF27 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		A74A33262ADBF37C002B2B77 /* PlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
 		A74A332A2ADC35A5002B2B77 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		A74A332C2ADC369E002B2B77 /* PlacesSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesSearchView.swift; sourceTree = "<group>"; };
+		A74A332E2ADDD402002B2B77 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		A76180AC2AAB927800B4FF27 /* CloudyVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudyVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A76180B32AAB927800B4FF27 /* CloudyVisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudyVisionApp.swift; sourceTree = "<group>"; };
 		A76180B52AAB927800B4FF27 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				A74A332C2ADC369E002B2B77 /* PlacesSearchView.swift */,
+				A74A332E2ADDD402002B2B77 /* SearchResultCell.swift */,
 			);
 			path = PlacesSearch;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A74A332F2ADDD402002B2B77 /* SearchResultCell.swift in Sources */,
 				A719B6E22AD5E05000DC5CAA /* PlacesListView.swift in Sources */,
 				A703560A2AB75EF300AD452F /* CGRect+Center.swift in Sources */,
 				A70356072AB5E8E800AD452F /* OnboardingConstants.swift in Sources */,
