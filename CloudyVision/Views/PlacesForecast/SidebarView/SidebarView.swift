@@ -15,10 +15,10 @@ struct SidebarView: View {
 
     var body: some View {
         Group {
-            if placeSearcher.hasNoResult {
-                PlacesListView(currentPlace: $currentPlace)
-            } else {
+            if placeSearcher.isSearching {
                 PlacesSearchView(placeSearcher: placeSearcher)
+            } else {
+                PlacesListView(currentPlace: $currentPlace)
             }
         }
         .navigationTitle("Weather")

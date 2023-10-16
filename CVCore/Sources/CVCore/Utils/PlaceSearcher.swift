@@ -13,8 +13,12 @@ public final class PlaceSearcher: NSObject {
 
     private(set) public var results = [MKLocalSearchCompletion]()
 
-    public var hasNoResult: Bool {
-        return completer.results.isEmpty
+    public var isSearching: Bool {
+        return !completer.queryFragment.isEmpty
+    }
+
+    public var hasResults: Bool {
+        return !results.isEmpty
     }
 
     public override init() {

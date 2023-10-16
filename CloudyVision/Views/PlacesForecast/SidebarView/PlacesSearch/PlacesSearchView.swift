@@ -15,6 +15,11 @@ struct PlacesSearchView: View {
         List(placeSearcher.results, id: \.self) { result in
             Text("\(result.title), \(result.subtitle)")
         }
+        .overlay {
+            if !placeSearcher.hasResults {
+                ContentUnavailableView.search(text: placeSearcher.completer.queryFragment)
+            }
+        }
     }
 }
 
