@@ -5,16 +5,19 @@
 //  Created by Valentin Perignon on 15/10/2023.
 //
 
+import CVCore
 import SwiftUI
 
 struct PlacesSearchView: View {
-    let search: String
+    var placeSearcher: PlaceSearcher
 
     var body: some View {
-        Text(verbatim: "Hello, World!")
+        List(placeSearcher.results, id: \.self) { result in
+            Text("\(result.title), \(result.subtitle)")
+        }
     }
 }
 
 #Preview {
-    PlacesSearchView(search: "")
+    PlacesSearchView(placeSearcher: PlaceSearcher())
 }

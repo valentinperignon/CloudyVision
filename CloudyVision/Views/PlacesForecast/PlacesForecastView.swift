@@ -15,7 +15,7 @@ struct PlacesForecastView: View {
 
     var body: some View {
         NavigationSplitView {
-            SidebarView()
+            SidebarView(currentPlace: $currentPlace)
         } detail: {
             ForecastView()
         }

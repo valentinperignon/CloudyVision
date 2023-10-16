@@ -14,6 +14,8 @@ struct PlacesListView: View {
 
     @Query private var places: [Place]
 
+    @Binding var currentPlace: Place?
+
     private var allPlaces: [Place] {
         var items = places
         if let currentLocation = locationManager.location {
@@ -24,12 +26,12 @@ struct PlacesListView: View {
     }
 
     var body: some View {
-        List(allPlaces) { place in
+        List(allPlaces, selection: $currentPlace) { place in
             PlaceCell(place: place)
         }
     }
 }
 
 #Preview {
-    PlacesListView()
+    PlacesListView(currentPlace: .constant(nil))
 }
