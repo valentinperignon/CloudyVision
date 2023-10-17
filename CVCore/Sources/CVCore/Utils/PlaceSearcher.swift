@@ -39,6 +39,7 @@ public final class PlaceSearcher: NSObject {
         super.init()
 
         completer.delegate = self
+        completer.resultTypes = .address
     }
 
     public func cancelSearch() {
