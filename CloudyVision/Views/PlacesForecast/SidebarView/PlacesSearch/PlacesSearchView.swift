@@ -17,8 +17,11 @@ struct PlacesSearchView: View {
         }
         .overlay {
             if !placeSearcher.hasResults {
-                ContentUnavailableView.search(text: placeSearcher.completer.queryFragment)
+                ContentUnavailableView.search(text: placeSearcher.query)
             }
+        }
+        .onDisappear {
+            placeSearcher.cancelSearch()
         }
     }
 }

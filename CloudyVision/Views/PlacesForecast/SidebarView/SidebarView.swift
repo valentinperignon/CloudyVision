@@ -22,7 +22,7 @@ struct SidebarView: View {
             }
         }
         .navigationTitle("Weather")
-        .searchable(text: $placeSearcher.completer.queryFragment)
+        .searchable(text: $placeSearcher.query)
     }
 }
 

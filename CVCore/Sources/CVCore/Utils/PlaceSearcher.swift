@@ -10,7 +10,19 @@ import MapKit
 
 @Observable
 public final class PlaceSearcher: NSObject {
-    public var completer: MKLocalSearchCompleter
+    private var completer: MKLocalSearchCompleter
+
+    public var query: String {
+        get {
+            access(keyPath: \.query)
+            return completer.queryFragment
+        }
+        set {
+            withMutation(keyPath: \.query) {
+                completer.queryFragment = newValue
+            }
+        }
+    }
 
     private(set) public var results = [MKLocalSearchCompletion]()
 
@@ -27,6 +39,10 @@ public final class PlaceSearcher: NSObject {
         super.init()
 
         completer.delegate = self
+    }
+
+    public func cancelSearch() {
+        completer.cancel()
     }
 }
 
