@@ -13,7 +13,7 @@ struct PlacesSearchView: View {
 
     var body: some View {
         List(placeSearcher.results, id: \.self) { result in
-            SearchResultCell(title: result.title, subtitle: result.subtitle)
+            SearchResultCell(result: result)
         }
         .overlay {
             if !placeSearcher.hasResults {
