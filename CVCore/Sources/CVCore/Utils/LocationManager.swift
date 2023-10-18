@@ -26,7 +26,8 @@ final public class LocationManager: NSObject {
         manager.requestWhenInUseAuthorization()
     }
 
-    public func requestLocation() {
+    public func requestLocationIfPossible() {
+        guard manager.authorizationStatus == .authorizedWhenInUse else { return }
         manager.requestLocation()
     }
 }
@@ -34,6 +35,7 @@ final public class LocationManager: NSObject {
 extension LocationManager: CLLocationManagerDelegate {
     public func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         status = manager.authorizationStatus
+        requestLocationIfPossible()
     }
 
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
