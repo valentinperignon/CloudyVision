@@ -19,11 +19,19 @@ struct PlacesListView: View {
     var body: some View {
         List(selection: $selectedPlace) {
             if let currentPlace = locationManager.currentPlace {
-                PlaceCell(place: currentPlace)
+                Button {
+                    selectedPlace = currentPlace
+                } label: {
+                    PlaceCell(place: currentPlace)
+                }
             }
 
             ForEach(places) { place in
-                PlaceCell(place: place)
+                Button {
+                    selectedPlace = place
+                } label: {
+                    PlaceCell(place: place)
+                }
             }
         }
     }
