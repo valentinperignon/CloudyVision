@@ -14,24 +14,21 @@ struct PlacesListView: View {
 
     @Query private var places: [Place]
 
-    @Binding var currentPlace: Place?
-
-    private var allPlaces: [Place] {
-        var items = places
-        if let currentLocation = locationManager.location {
-            let currentLocation = Place(location: currentLocation, isCurrentLocation: true)
-            items.insert(currentLocation, at: 0)
-        }
-        return items
-    }
+    @Binding var selectedPlace: Place?
 
     var body: some View {
-        List(allPlaces, selection: $currentPlace) { place in
-            PlaceCell(place: place)
+        List(selection: $selectedPlace) {
+            if let currentPlace = locationManager.currentPlace {
+                PlaceCell(place: currentPlace)
+            }
+
+            ForEach(places) { place in
+                PlaceCell(place: place)
+            }
         }
     }
 }
 
 #Preview {
-    PlacesListView(currentPlace: .constant(nil))
+    PlacesListView(selectedPlace: .constant(nil))
 }

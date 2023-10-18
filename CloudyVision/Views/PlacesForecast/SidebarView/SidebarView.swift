@@ -11,14 +11,14 @@ import SwiftUI
 struct SidebarView: View {
     @State private var placeSearcher = PlaceSearcher()
 
-    @Binding var currentPlace: Place?
+    @Binding var selectedPlace: Place?
 
     var body: some View {
         Group {
             if placeSearcher.isSearching {
-                PlacesSearchView(placeSearcher: placeSearcher)
+                PlacesSearchView(placeSearcher: placeSearcher, selectedPlace: $selectedPlace)
             } else {
-                PlacesListView(currentPlace: $currentPlace)
+                PlacesListView(selectedPlace: $selectedPlace)
             }
         }
         .navigationTitle("Weather")
@@ -27,5 +27,5 @@ struct SidebarView: View {
 }
 
 #Preview {
-    SidebarView(currentPlace: .constant(nil))
+    SidebarView(selectedPlace: .constant(nil))
 }

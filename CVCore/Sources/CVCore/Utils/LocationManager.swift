@@ -14,7 +14,7 @@ final public class LocationManager: NSObject {
     private let manager = CLLocationManager()
 
     public var status = CLAuthorizationStatus.notDetermined
-    public var location: CLLocation?
+    public var currentPlace: Place?
 
     public override init() {
         super.init()
@@ -39,7 +39,10 @@ extension LocationManager: CLLocationManagerDelegate {
     }
 
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        location = locations.first
+        Task {
+            guard let location = locations.first else { return }
+            try await currentPlace = Place(location: location, isCurrentLocation: true)
+        }
     }
 
     public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

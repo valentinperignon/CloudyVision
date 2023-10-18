@@ -11,9 +11,18 @@ import SwiftUI
 struct PlacesSearchView: View {
     var placeSearcher: PlaceSearcher
 
+    @Binding var selectedPlace: Place?
+
     var body: some View {
         List(placeSearcher.results, id: \.self) { result in
-            SearchResultCell(result: result)
+            Button {
+                withAnimation {
+                    placeSearcher.query = ""
+                    selectedPlace = Place(from: result)
+                }
+            } label: {
+                SearchResultCell(result: result)
+            }
         }
         .overlay {
             if !placeSearcher.hasResults {
@@ -27,5 +36,5 @@ struct PlacesSearchView: View {
 }
 
 #Preview {
-    PlacesSearchView(placeSearcher: PlaceSearcher())
+    PlacesSearchView(placeSearcher: PlaceSearcher(), selectedPlace: .constant(nil))
 }

@@ -6,16 +6,28 @@
 //
 
 import CVCore
+import OSLog
 import SwiftUI
 
 struct PlacesForecastView: View {
-    @State private var currentPlace: Place?
+    @State private var selectedPlace: Place?
 
     var body: some View {
         NavigationSplitView {
-            SidebarView(currentPlace: $currentPlace)
+            SidebarView(selectedPlace: $selectedPlace)
         } detail: {
             ForecastView()
+        }
+        .onChange(of: selectedPlace) { _, newPlace in
+            Task {
+                if newPlace?.coordinate == nil {
+                    do {
+                        try await newPlace?.fetchCoordinate()
+                    } catch {
+                        Logger.placesForecast.error("Error while fetching cordinates")
+                    }
+                }
+            }
         }
     }
 }

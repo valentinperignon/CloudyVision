@@ -12,17 +12,13 @@ struct SearchResultCell: View {
     let result: MKLocalSearchCompletion
 
     var body: some View {
-        Button {
-            // TODO: Select city
-        } label: {
-            VStack(alignment: .leading) {
-                Text(highlightResult(from: result.title, ranges: result.titleHighlightRanges))
-                    .font(.body)
-                Text(highlightResult(from: result.subtitle, ranges: result.subtitleHighlightRanges))
-                    .font(.caption)
-            }
-            .foregroundStyle(.secondary)
+        VStack(alignment: .leading) {
+            Text(highlightResult(from: result.title, ranges: result.titleHighlightRanges))
+                .font(.body)
+            Text(highlightResult(from: result.subtitle, ranges: result.subtitleHighlightRanges))
+                .font(.caption)
         }
+        .foregroundStyle(.secondary)
     }
 
     private func highlightResult(from text: String, ranges: [NSValue]) -> AttributedString {

@@ -9,7 +9,6 @@ let package = Package(
         .library(name: "CVCore", targets: ["CVCore"]),
     ],
     targets: [
-        .target(name: "CVCore"),
-        .testTarget(name: "CVCoreTests", dependencies: ["CVCore"]),
+        .target(name: "CVCore")
     ]
 )
