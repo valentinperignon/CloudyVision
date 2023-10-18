@@ -1,5 +1,5 @@
 //
-//  Coordinate.swift
+//  Coordinates.swift
 //
 //
 //  Created by Valentin Perignon on 14/10/2023.
@@ -9,7 +9,7 @@ import CoreLocation
 import Foundation
 import SwiftData
 
-public struct Coordinate: Codable, Hashable {
+public struct Coordinates: Codable, Hashable {
     public let latitude: Double
     public let longitude: Double
 

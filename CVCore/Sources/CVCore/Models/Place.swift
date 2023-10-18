@@ -13,7 +13,7 @@ import SwiftData
 @Model
 public final class Place: Identifiable {
     public let name: String
-    public var coordinate: Coordinate?
+    public var coordinate: Coordinates?
 
     @Transient
     public var isCurrentLocation = false
@@ -25,7 +25,7 @@ public final class Place: Identifiable {
         return "building.2"
     }
 
-    public init(name: String, coordinate: Coordinate? = nil, isCurrentLocation: Bool = false) {
+    public init(name: String, coordinate: Coordinates? = nil, isCurrentLocation: Bool = false) {
         self.name = name
         self.coordinate = coordinate
         self.isCurrentLocation = isCurrentLocation
@@ -38,12 +38,11 @@ public final class Place: Identifiable {
             throw CVError.geocoderError
         }
 
-        self.init(name: name, coordinate: Coordinate(from: location), isCurrentLocation: isCurrentLocation)
+        self.init(name: name, coordinate: Coordinates(from: location), isCurrentLocation: isCurrentLocation)
     }
 
     public convenience init(from searchResult: MKLocalSearchCompletion) {
-        var name = "\(searchResult.title) \(searchResult.subtitle)".trimmingCharacters(in: .whitespaces)
-        self.init(name: name)
+        self.init(name: searchResult.title)
     }
 
     public func fetchCoordinate() async throws {
@@ -53,6 +52,6 @@ public final class Place: Identifiable {
             throw CVError.geocoderError
         }
 
-        coordinate = Coordinate(from: location)
+        coordinate = Coordinates(from: location)
     }
 }

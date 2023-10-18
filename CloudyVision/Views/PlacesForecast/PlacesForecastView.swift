@@ -16,7 +16,7 @@ struct PlacesForecastView: View {
         NavigationSplitView {
             SidebarView(selectedPlace: $selectedPlace)
         } detail: {
-            ForecastView()
+            ForecastView(selectedPlace: selectedPlace)
         }
         .onChange(of: selectedPlace) { _, newPlace in
             Task {

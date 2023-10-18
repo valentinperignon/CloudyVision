@@ -30,5 +30,5 @@ struct PlaceCell: View {
 }
 
 #Preview {
-    PlaceCell(place: Place(name: "Paris", coordinate: Coordinate(from: CLLocation(latitude: 48.86, longitude: 2.35))))
+    PlaceCell(place: Place(name: "Paris", coordinate: Coordinates(from: CLLocation(latitude: 48.86, longitude: 2.35))))
 }
