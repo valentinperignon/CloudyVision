@@ -8,6 +8,7 @@
 import CoreLocation
 import Foundation
 import OSLog
+import SwiftUI
 
 @Observable
 final public class LocationManager: NSObject {
@@ -41,7 +42,10 @@ extension LocationManager: CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         Task {
             guard let location = locations.first else { return }
-            try await currentPlace = Place(location: location, isCurrentLocation: true)
+            let place = try await Place(location: location, isCurrentLocation: true)
+            withAnimation {
+                currentPlace = place
+            }
         }
     }
 

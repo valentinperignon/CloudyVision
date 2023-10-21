@@ -16,24 +16,33 @@ struct PlacesListView: View {
 
     @Binding var selectedPlace: Place?
 
-    var body: some View {
-        List(selection: $selectedPlace) {
-            if let currentPlace = locationManager.currentPlace {
-                Button {
-                    selectedPlace = currentPlace
-                } label: {
-                    PlaceCell(place: currentPlace)
-                }
-            }
+    private var allPlaces: [Place] {
+        var list = places
+        if let currentPlace = locationManager.currentPlace {
+            list.insert(currentPlace, at: 0)
+        }
+        return list
+    }
 
-            ForEach(places) { place in
-                Button {
-                    selectedPlace = place
-                } label: {
-                    PlaceCell(place: place)
-                }
+    var body: some View {
+        List(allPlaces, selection: $selectedPlace) { place in
+            Button {
+                selectedPlace = place
+            } label: {
+                PlaceCell(place: place)
             }
         }
+        .onAppear {
+            selectFirstItem()
+        }
+        .onChange(of: allPlaces) {
+            selectFirstItem()
+        }
+    }
+
+    private func selectFirstItem() {
+        guard selectedPlace == nil else { return }
+        selectedPlace = allPlaces.first
     }
 }
 
