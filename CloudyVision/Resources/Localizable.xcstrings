@@ -1,6 +1,16 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Add this place to favorites" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter ce lieu aux favoris"
+          }
+        }
+      }
+    },
     "Authorize Localization" : {
       "localizations" : {
         "fr" : {
@@ -38,6 +48,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lancer l'app"
+          }
+        }
+      }
+    },
+    "Remove this place from favorites" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retirer ce lieu des favoris"
           }
         }
       }

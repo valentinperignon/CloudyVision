@@ -55,3 +55,7 @@ public final class Place: Identifiable {
         coordinate = Coordinates(from: location)
     }
 }
+
+extension Place {
+    public static let appleCampus = Place(name: "Apple Park", coordinate: Coordinates(from: CLLocation(latitude: 37.33, longitude: -122.01)))
+}
