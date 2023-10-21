@@ -6,7 +6,14 @@
 //
 
 import CVCore
+import MapKit
 import SwiftUI
+
+extension MKLocalSearchCompletion: Identifiable {
+    public var id: Int {
+        title.hashValue ^ subtitle.hashValue
+    }
+}
 
 struct PlacesSearchView: View {
     var placeSearcher: PlaceSearcher
@@ -14,7 +21,7 @@ struct PlacesSearchView: View {
     @Binding var selectedPlace: Place?
 
     var body: some View {
-        List(placeSearcher.results, id: \.self) { result in
+        List(placeSearcher.results) { result in
             Button {
                 withAnimation {
                     placeSearcher.query = ""

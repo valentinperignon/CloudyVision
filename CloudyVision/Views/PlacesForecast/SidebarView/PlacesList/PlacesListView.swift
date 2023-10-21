@@ -33,15 +33,17 @@ struct PlacesListView: View {
             }
         }
         .onAppear {
-            selectFirstItem()
+            selectDefaultPlace()
         }
         .onChange(of: allPlaces) {
-            selectFirstItem()
+            selectDefaultPlace()
         }
     }
 
-    private func selectFirstItem() {
+    private func selectDefaultPlace() {
         guard selectedPlace == nil else { return }
+        guard locationManager.status != .authorizedWhenInUse || locationManager.currentPlace != nil else { return }
+
         selectedPlace = allPlaces.first
     }
 }
