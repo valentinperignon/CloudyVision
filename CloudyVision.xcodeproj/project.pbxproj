@@ -34,6 +34,7 @@
 		A74A332A2ADC35A5002B2B77 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		A74A332C2ADC369E002B2B77 /* PlacesSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesSearchView.swift; sourceTree = "<group>"; };
 		A74A332E2ADDD402002B2B77 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		A74A33302AE41875002B2B77 /* CloudyVision.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CloudyVision.entitlements; sourceTree = "<group>"; };
 		A76180AC2AAB927800B4FF27 /* CloudyVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudyVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A76180B32AAB927800B4FF27 /* CloudyVisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudyVisionApp.swift; sourceTree = "<group>"; };
 		A76180B52AAB927800B4FF27 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
@@ -108,6 +109,7 @@
 		A76180AE2AAB927800B4FF27 /* CloudyVision */ = {
 			isa = PBXGroup;
 			children = (
+				A74A33302AE41875002B2B77 /* CloudyVision.entitlements */,
 				A76180B32AAB927800B4FF27 /* CloudyVisionApp.swift */,
 				A76180D62AAC770F00B4FF27 /* Components */,
 				A76180C22AAB929600B4FF27 /* Views */,
@@ -409,6 +411,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CloudyVision/CloudyVision.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LYG6796H6N;
@@ -435,6 +438,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CloudyVision/CloudyVision.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LYG6796H6N;
