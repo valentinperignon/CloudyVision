@@ -10,6 +10,9 @@ import OSLog
 import SwiftUI
 
 struct PlacesForecastView: View {
+    @Environment(\.scenePhase) private var scenePhase
+    @Environment(LocationManager.self) private var locationManager
+
     @State private var selectedPlace: Place?
 
     var body: some View {
@@ -18,11 +21,23 @@ struct PlacesForecastView: View {
         } detail: {
             ForecastView(place: selectedPlace ?? .appleCampus)
         }
-        .onChange(of: selectedPlace) { _, newPlace in
-            Task {
-                if newPlace?.coordinate == nil {
+        .onChange(of: scenePhase) {
+            if scenePhase == .active {
+                locationManager.requestLocationIfPossible()
+                Task {
                     do {
-                        try await newPlace?.fetchCoordinate()
+                        try await WeatherManager.shared.refreshWeather()
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        }
+        .onChange(of: selectedPlace) {
+            Task {
+                if selectedPlace?.coordinates == nil {
+                    do {
+                        try await selectedPlace?.fetchCoordinate()
                     } catch {
                         Logger.placesForecast.error("Error while fetching cordinates")
                     }

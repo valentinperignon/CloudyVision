@@ -1,7 +1,11 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%lf" : {
+
+    },
     "Add this place to favorites" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -53,6 +57,7 @@
       }
     },
     "Remove this place from favorites" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {

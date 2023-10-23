@@ -6,18 +6,15 @@
 //
 
 import CVCore
-import SwiftData
 import SwiftUI
 
 struct PlacesListView: View {
     @Environment(LocationManager.self) private var locationManager
 
-    @Query private var places: [Place]
-
     @Binding var selectedPlace: Place?
 
     private var allPlaces: [Place] {
-        var list = places
+        var list = Place.allPlaces
         if let currentPlace = locationManager.currentPlace {
             list.insert(currentPlace, at: 0)
         }
@@ -30,6 +27,9 @@ struct PlacesListView: View {
                 selectedPlace = place
             } label: {
                 PlaceCell(place: place)
+            }
+            .onChange(of: place) {
+                print("PLACE \(place.name) HAS CHANGED")
             }
         }
         .onAppear {

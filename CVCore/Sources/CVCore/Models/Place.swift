@@ -8,14 +8,15 @@
 import CoreLocation
 import Foundation
 import MapKit
-import SwiftData
+import WeatherKit
 
-@Model
+@Observable
 public final class Place: Identifiable {
     public let name: String
-    public var coordinate: Coordinates?
+    public var coordinates: Coordinates?
 
-    @Transient
+    public var weather: WeatherData?
+
     public var isCurrentLocation = false
 
     public var iconName: String {
@@ -27,7 +28,7 @@ public final class Place: Identifiable {
 
     public init(name: String, coordinate: Coordinates? = nil, isCurrentLocation: Bool = false) {
         self.name = name
-        self.coordinate = coordinate
+        self.coordinates = coordinate
         self.isCurrentLocation = isCurrentLocation
     }
 
@@ -52,10 +53,26 @@ public final class Place: Identifiable {
             throw CVError.geocoderError
         }
 
-        coordinate = Coordinates(from: location)
+        coordinates = Coordinates(from: location)
+    }
+}
+
+extension Place: Equatable {
+    public static func == (lhs: Place, rhs: Place) -> Bool {
+        lhs.id == rhs.id
+    }
+}
+
+extension Place: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
+        hasher.combine(coordinates)
+        hasher.combine(isCurrentLocation)
     }
 }
 
 extension Place {
+    public static let allPlaces: [Place] = [.appleCampus]
+
     public static let appleCampus = Place(name: "Apple Park", coordinate: Coordinates(from: CLLocation(latitude: 37.33, longitude: -122.01)))
 }

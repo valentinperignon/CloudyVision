@@ -9,48 +9,26 @@ import CVCore
 import SwiftUI
 
 struct ForecastView: View {
-    @Environment(\.modelContext) private var context
-
-    @State private var isStored: Bool
-
     let place: Place
-
-    init(place: Place) {
-        self.place = place
-        _isStored = State(wrappedValue: place.modelContext != nil)
-    }
 
     var body: some View {
         VStack {
-            
+            if let temperature = place.weather?.hourlyForecast.first?.temperature {
+                Text("\(temperature.value)")
+            }
+        }
+        .onAppear {
+            Task {
+                try await WeatherManager.shared.fetchWeather(for: place)
+            }
+        }
+        .onChange(of: place.coordinates) {
+            Task {
+                try await WeatherManager.shared.fetchWeather(for: place)
+            }
         }
         .padding()
         .navigationTitle(place.name)
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                if !place.isCurrentLocation {
-                    if isStored {
-                        Button {
-                            withAnimation {
-                                context.delete(place)
-                                isStored = false
-                            }
-                        } label: {
-                            Label("Remove this place from favorites", systemImage: "star.slash")
-                        }
-                    } else {
-                        Button {
-                            withAnimation {
-                                context.insert(place)
-                                isStored = true
-                            }
-                        } label: {
-                            Label("Add this place to favorites", systemImage: "star")
-                        }
-                    }
-                }
-            }
-        }
     }
 }
 

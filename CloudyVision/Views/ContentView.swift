@@ -9,8 +9,6 @@ import CVCore
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(\.scenePhase) private var scenePhase
-
     @AppStorage("didLaunchedAppBefore") private var didLauchedAppBefore = false
 
     @State private var locationManager = LocationManager()
@@ -24,11 +22,7 @@ struct ContentView: View {
             }
         }
         .environment(locationManager)
-        .onChange(of: scenePhase) { _, newPhase in
-            if newPhase == .active {
-                locationManager.requestLocationIfPossible()
-            }
-        }
+        
     }
 }
 

@@ -6,7 +6,6 @@
 //
 
 import CVCore
-import SwiftData
 import SwiftUI
 
 @main
@@ -15,6 +14,5 @@ struct CloudyVisionApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: [Place.self])
     }
 }

@@ -7,7 +7,6 @@
 
 import CoreLocation
 import Foundation
-import SwiftData
 
 public struct Coordinates: Codable, Hashable {
     public let latitude: Double
