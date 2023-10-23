@@ -12,9 +12,24 @@ struct ForecastView: View {
     let place: Place
 
     var body: some View {
-        VStack {
-            if let temperature = place.weather?.hourlyForecast.first?.temperature {
-                Text("\(temperature.value)")
+        Group {
+            if let weather = place.weather {
+                ScrollView {
+                    VStack {
+                        TemperatureView(temperature: weather.currentWeather.temperature)
+                            .font(.extraLargeTitle)
+
+                        if let today = weather.dailyForecast.first {
+                            Text(today.condition.description)
+                                .font(.title)
+
+                            ExtremumTemperatureView(lowTemperature: today.lowTemperature, highTemperature: today.highTemperature)
+                        }
+                    }
+                    .frame(maxWidth: .infinity)
+                }
+            } else {
+                ContentUnavailableView("Data Unavailable", systemImage: "sun.max.trianglebadge.exclamationmark")
             }
         }
         .onAppear {

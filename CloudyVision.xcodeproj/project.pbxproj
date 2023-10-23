@@ -24,6 +24,8 @@
 		A76180D82AAC771B00B4FF27 /* AnimatableTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76180D72AAC771B00B4FF27 /* AnimatableTitle.swift */; };
 		A76180DB2AACCF8800B4FF27 /* PlacesForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76180DA2AACCF8800B4FF27 /* PlacesForecastView.swift */; };
 		A76180DD2AADDF4600B4FF27 /* WeatherBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76180DC2AADDF4600B4FF27 /* WeatherBackgroundView.swift */; };
+		A796A13A2AE6FDC800054460 /* ExtremumTemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A1392AE6FDC800054460 /* ExtremumTemperatureView.swift */; };
+		A796A13C2AE701B100054460 /* TemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A13B2AE701B100054460 /* TemperatureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		A76180D72AAC771B00B4FF27 /* AnimatableTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableTitle.swift; sourceTree = "<group>"; };
 		A76180DA2AACCF8800B4FF27 /* PlacesForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesForecastView.swift; sourceTree = "<group>"; };
 		A76180DC2AADDF4600B4FF27 /* WeatherBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherBackgroundView.swift; sourceTree = "<group>"; };
+		A796A1392AE6FDC800054460 /* ExtremumTemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtremumTemperatureView.swift; sourceTree = "<group>"; };
+		A796A13B2AE701B100054460 /* TemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +181,8 @@
 			isa = PBXGroup;
 			children = (
 				A76180D72AAC771B00B4FF27 /* AnimatableTitle.swift */,
+				A796A1392AE6FDC800054460 /* ExtremumTemperatureView.swift */,
+				A796A13B2AE701B100054460 /* TemperatureView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -274,8 +280,10 @@
 				A74A332D2ADC369E002B2B77 /* PlacesSearchView.swift in Sources */,
 				A74A332B2ADC35A5002B2B77 /* SidebarView.swift in Sources */,
 				A76180B42AAB927800B4FF27 /* CloudyVisionApp.swift in Sources */,
+				A796A13C2AE701B100054460 /* TemperatureView.swift in Sources */,
 				A74A33272ADBF37C002B2B77 /* PlaceCell.swift in Sources */,
 				A76180DB2AACCF8800B4FF27 /* PlacesForecastView.swift in Sources */,
+				A796A13A2AE6FDC800054460 /* ExtremumTemperatureView.swift in Sources */,
 				A76180D52AABDADB00B4FF27 /* OnboardingView.swift in Sources */,
 				A76180D82AAC771B00B4FF27 /* AnimatableTitle.swift in Sources */,
 				A76180C82AABABD600B4FF27 /* ContentView.swift in Sources */,
