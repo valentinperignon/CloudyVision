@@ -30,6 +30,8 @@
 		A796A1402AE83BFD00054460 /* PreviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A13F2AE83BFD00054460 /* PreviewHelper.swift */; };
 		A796A1432AE84E1600054460 /* HourlyForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A1422AE84E1600054460 /* HourlyForecastView.swift */; };
 		A796A1452AE84E7700054460 /* HourForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A1442AE84E7700054460 /* HourForecastView.swift */; };
+		A796A1472AE860B700054460 /* DailyForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A1462AE860B700054460 /* DailyForecastView.swift */; };
+		A796A1492AE860EE00054460 /* DayForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A1482AE860EE00054460 /* DayForecastView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		A796A13F2AE83BFD00054460 /* PreviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewHelper.swift; sourceTree = "<group>"; };
 		A796A1422AE84E1600054460 /* HourlyForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecastView.swift; sourceTree = "<group>"; };
 		A796A1442AE84E7700054460 /* HourForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourForecastView.swift; sourceTree = "<group>"; };
+		A796A1462AE860B700054460 /* DailyForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecastView.swift; sourceTree = "<group>"; };
+		A796A1482AE860EE00054460 /* DayForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayForecastView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +217,8 @@
 				A796A13D2AE837F400054460 /* TodaySummuryView.swift */,
 				A796A1422AE84E1600054460 /* HourlyForecastView.swift */,
 				A796A1442AE84E7700054460 /* HourForecastView.swift */,
+				A796A1462AE860B700054460 /* DailyForecastView.swift */,
+				A796A1482AE860EE00054460 /* DayForecastView.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -295,6 +301,7 @@
 				A719B6E22AD5E05000DC5CAA /* PlacesListView.swift in Sources */,
 				A703560A2AB75EF300AD452F /* CGRect+Center.swift in Sources */,
 				A70356072AB5E8E800AD452F /* OnboardingConstants.swift in Sources */,
+				A796A1492AE860EE00054460 /* DayForecastView.swift in Sources */,
 				A76180B62AAB927800B4FF27 /* ForecastView.swift in Sources */,
 				A76180DD2AADDF4600B4FF27 /* WeatherBackgroundView.swift in Sources */,
 				A796A1402AE83BFD00054460 /* PreviewHelper.swift in Sources */,
@@ -306,6 +313,7 @@
 				A796A13E2AE837F400054460 /* TodaySummuryView.swift in Sources */,
 				A796A13C2AE701B100054460 /* TemperatureView.swift in Sources */,
 				A74A33272ADBF37C002B2B77 /* PlaceCell.swift in Sources */,
+				A796A1472AE860B700054460 /* DailyForecastView.swift in Sources */,
 				A76180DB2AACCF8800B4FF27 /* PlacesForecastView.swift in Sources */,
 				A796A13A2AE6FDC800054460 /* ExtremumTemperatureView.swift in Sources */,
 				A76180D52AABDADB00B4FF27 /* OnboardingView.swift in Sources */,
