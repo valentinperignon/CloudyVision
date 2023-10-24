@@ -15,7 +15,6 @@ struct HourForecastView: View {
         VStack(spacing: 24) {
             TemperatureView(temperature: hourForecast.temperature)
 
-
             Image(systemName: "\(hourForecast.symbolName).fill")
                 .symbolRenderingMode(.multicolor)
 

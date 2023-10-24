@@ -21,6 +21,13 @@ struct PlacesForecastView: View {
         } detail: {
             ForecastView(place: selectedPlace ?? .appleCampus)
         }
+        .task {
+            do {
+                try await WeatherManager.shared.refreshWeather()
+            } catch {
+                Logger.placesForecast.error("Error while refreshing weather")
+            }
+        }
         .onChange(of: scenePhase) {
             if scenePhase == .active {
                 locationManager.requestLocationIfPossible()
@@ -28,19 +35,22 @@ struct PlacesForecastView: View {
                     do {
                         try await WeatherManager.shared.refreshWeather()
                     } catch {
-                        print(error.localizedDescription)
+                        Logger.placesForecast.error("Error while refreshing weather")
                     }
                 }
             }
         }
         .onChange(of: selectedPlace) {
             Task {
-                if selectedPlace?.coordinates == nil {
-                    do {
-                        try await selectedPlace?.fetchCoordinate()
-                    } catch {
-                        Logger.placesForecast.error("Error while fetching cordinates")
+                guard let selectedPlace else { return }
+
+                do {
+                    if selectedPlace.coordinates == nil {
+                        try await selectedPlace.fetchCoordinate()
                     }
+                    try await WeatherManager.shared.fetchWeather(for: selectedPlace)
+                } catch {
+                    Logger.placesForecast.error("Error when user changed selected place: \(error.localizedDescription)")
                 }
             }
         }

@@ -26,16 +26,6 @@ struct ForecastView: View {
                                        systemImage: "sun.max.trianglebadge.exclamationmark")
             }
         }
-        .onAppear {
-            Task {
-                try await WeatherManager.shared.fetchWeather(for: place)
-            }
-        }
-        .onChange(of: place.coordinates) {
-            Task {
-                try await WeatherManager.shared.fetchWeather(for: place)
-            }
-        }
         .padding()
         .navigationTitle(place.name)
     }
