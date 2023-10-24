@@ -15,10 +15,15 @@ struct ForecastView: View {
         Group {
             if let weather = place.weather {
                 ScrollView {
-                    TodaySummuryView(currentWeather: weather.currentWeather, today: weather.today)
+                    VStack(spacing: 32) {
+                        TodaySummuryView(currentWeather: weather.currentWeather, today: weather.today)
+
+                        HourlyForecastView(hourlyForecast: weather.hourlyForecast)
+                    }
                 }
             } else {
-                ContentUnavailableView("Weather Unavailable", systemImage: "sun.max.trianglebadge.exclamationmark")
+                ContentUnavailableView("Weather Unavailable",
+                                       systemImage: "sun.max.trianglebadge.exclamationmark")
             }
         }
         .onAppear {
