@@ -22,8 +22,11 @@ public final class Place: Identifiable {
     public var iconName: String {
         if isCurrentLocation {
             return "location"
+        } else if let weatherSymbol = weather?.currentWeather.symbolName{
+            return weatherSymbol
+        } else {
+            return "building.2"
         }
-        return "building.2"
     }
 
     public init(name: String, coordinate: Coordinates? = nil, isCurrentLocation: Bool = false) {

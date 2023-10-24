@@ -14,20 +14,18 @@ struct ExtremumTemperatureView: View {
     var body: some View {
         HStack(spacing: 8) {
             HStack(spacing: 4) {
-                Text("L")
+                Image(systemName: "arrow.up")
                 TemperatureView(temperature: lowTemperature)
             }
 
             HStack(spacing: 4) {
-                Text("H")
+                Image(systemName: "arrow.down")
                 TemperatureView(temperature: highTemperature)
             }
         }
-        .font(.caption)
-        .foregroundStyle(.secondary)
     }
 }
 
 #Preview {
-    ExtremumTemperatureView(lowTemperature: .init(value: 10, unit: .celsius), highTemperature: .init(value: 20, unit: .celsius))
+    ExtremumTemperatureView(lowTemperature: PreviewHelper.lowTemperature, highTemperature: PreviewHelper.highTemperature)
 }

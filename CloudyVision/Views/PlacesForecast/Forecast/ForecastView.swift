@@ -15,21 +15,10 @@ struct ForecastView: View {
         Group {
             if let weather = place.weather {
                 ScrollView {
-                    VStack {
-                        TemperatureView(temperature: weather.currentWeather.temperature)
-                            .font(.extraLargeTitle)
-
-                        if let today = weather.dailyForecast.first {
-                            Text(today.condition.description)
-                                .font(.title)
-
-                            ExtremumTemperatureView(lowTemperature: today.lowTemperature, highTemperature: today.highTemperature)
-                        }
-                    }
-                    .frame(maxWidth: .infinity)
+                    TodaySummuryView(currentWeather: weather.currentWeather, today: weather.today)
                 }
             } else {
-                ContentUnavailableView("Data Unavailable", systemImage: "sun.max.trianglebadge.exclamationmark")
+                ContentUnavailableView("Weather Unavailable", systemImage: "sun.max.trianglebadge.exclamationmark")
             }
         }
         .onAppear {

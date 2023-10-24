@@ -27,8 +27,10 @@ struct PlaceCell: View {
                 }
                 .font(.headline)
 
-                if let todayWeather = place.weather?.dailyForecast.first {
+                if let todayWeather = place.weather?.today {
                     ExtremumTemperatureView(lowTemperature: todayWeather.lowTemperature, highTemperature: todayWeather.highTemperature)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
                 }
             }
 
@@ -37,6 +39,7 @@ struct PlaceCell: View {
             if let currentTemperature = place.weather?.currentWeather.temperature {
                 TemperatureView(temperature: currentTemperature)
                     .font(.title)
+                    .fontWeight(.regular)
                     .foregroundStyle(.secondary)
             }
         }

@@ -42,9 +42,6 @@
         }
       }
     },
-    "Data Unavailable" : {
-
-    },
     "Favorite places" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -55,12 +52,6 @@
           }
         }
       }
-    },
-    "H" : {
-
-    },
-    "L" : {
-
     },
     "Launch App" : {
       "localizations" : {
@@ -99,6 +90,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Weather in a new dimension"
+          }
+        }
+      }
+    },
+    "Weather Unavailable" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Météo Indisponible"
           }
         }
       }
