@@ -8,17 +8,17 @@
 import SwiftUI
 import WeatherKit
 
-struct HourForecastView: View {
-    let hourForecast: HourWeather
+struct HourWeatherView: View {
+    let hourWeather: HourWeather
 
     var body: some View {
         VStack(spacing: 24) {
-            TemperatureView(temperature: hourForecast.temperature)
+            TemperatureView(temperature: hourWeather.temperature)
 
-            Image(systemName: "\(hourForecast.symbolName).fill")
+            Image(systemName: "\(hourWeather.symbolName).fill")
                 .symbolRenderingMode(.multicolor)
 
-            Text(hourForecast.date, format: .dateTime.hour())
+            Text(hourWeather.date, format: .dateTime.hour())
                 .font(.caption)
                 .foregroundStyle(.secondary)
         }

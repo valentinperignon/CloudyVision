@@ -15,7 +15,7 @@ struct HourlyForecastView: View {
         ScrollView(.horizontal) {
             HStack(spacing: 32) {
                 ForEach(hourlyForecast.lazy.prefix(24), id: \.date) { forecast in
-                    HourForecastView(hourForecast: forecast)
+                    HourWeatherView(hourWeather: forecast)
                 }
             }
             .padding(24)

@@ -19,6 +19,13 @@ struct ForecastView: View {
                         TodaySummuryView(currentWeather: weather.currentWeather, today: weather.today)
 
                         HourlyForecastView(hourlyForecast: weather.hourlyForecast)
+
+                        HStack(spacing: 32) {
+                            DailyForecastView(dailyForecast: weather.dailyForecast)
+
+                            // TODO: Will be replaced with real view
+                            DailyForecastView(dailyForecast: weather.dailyForecast)
+                        }
                     }
                 }
             } else {

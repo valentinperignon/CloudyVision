@@ -12,6 +12,12 @@ struct DailyForecastView: View {
     let dailyForecast: Forecast<DayWeather>
 
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            ForEach(dailyForecast.lazy.prefix(11).dropFirst(), id: \.date) { dayWeather in
+                DayWeatherView(dayWeather: dayWeather)
+            }
+        }
+        .background(Material.regular)
+        .clipShape(RoundedRectangle(cornerRadius: 16))
     }
 }

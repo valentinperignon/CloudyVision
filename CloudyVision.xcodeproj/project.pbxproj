@@ -29,9 +29,9 @@
 		A796A13E2AE837F400054460 /* TodaySummuryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A13D2AE837F400054460 /* TodaySummuryView.swift */; };
 		A796A1402AE83BFD00054460 /* PreviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A13F2AE83BFD00054460 /* PreviewHelper.swift */; };
 		A796A1432AE84E1600054460 /* HourlyForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A1422AE84E1600054460 /* HourlyForecastView.swift */; };
-		A796A1452AE84E7700054460 /* HourForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A1442AE84E7700054460 /* HourForecastView.swift */; };
+		A796A1452AE84E7700054460 /* HourWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A1442AE84E7700054460 /* HourWeatherView.swift */; };
 		A796A1472AE860B700054460 /* DailyForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A1462AE860B700054460 /* DailyForecastView.swift */; };
-		A796A1492AE860EE00054460 /* DayForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A1482AE860EE00054460 /* DayForecastView.swift */; };
+		A796A1492AE860EE00054460 /* DayWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A1482AE860EE00054460 /* DayWeatherView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,9 +60,9 @@
 		A796A13D2AE837F400054460 /* TodaySummuryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaySummuryView.swift; sourceTree = "<group>"; };
 		A796A13F2AE83BFD00054460 /* PreviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewHelper.swift; sourceTree = "<group>"; };
 		A796A1422AE84E1600054460 /* HourlyForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecastView.swift; sourceTree = "<group>"; };
-		A796A1442AE84E7700054460 /* HourForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourForecastView.swift; sourceTree = "<group>"; };
+		A796A1442AE84E7700054460 /* HourWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourWeatherView.swift; sourceTree = "<group>"; };
 		A796A1462AE860B700054460 /* DailyForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecastView.swift; sourceTree = "<group>"; };
-		A796A1482AE860EE00054460 /* DayForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayForecastView.swift; sourceTree = "<group>"; };
+		A796A1482AE860EE00054460 /* DayWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayWeatherView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,9 +216,9 @@
 			children = (
 				A796A13D2AE837F400054460 /* TodaySummuryView.swift */,
 				A796A1422AE84E1600054460 /* HourlyForecastView.swift */,
-				A796A1442AE84E7700054460 /* HourForecastView.swift */,
+				A796A1442AE84E7700054460 /* HourWeatherView.swift */,
 				A796A1462AE860B700054460 /* DailyForecastView.swift */,
-				A796A1482AE860EE00054460 /* DayForecastView.swift */,
+				A796A1482AE860EE00054460 /* DayWeatherView.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -301,13 +301,13 @@
 				A719B6E22AD5E05000DC5CAA /* PlacesListView.swift in Sources */,
 				A703560A2AB75EF300AD452F /* CGRect+Center.swift in Sources */,
 				A70356072AB5E8E800AD452F /* OnboardingConstants.swift in Sources */,
-				A796A1492AE860EE00054460 /* DayForecastView.swift in Sources */,
+				A796A1492AE860EE00054460 /* DayWeatherView.swift in Sources */,
 				A76180B62AAB927800B4FF27 /* ForecastView.swift in Sources */,
 				A76180DD2AADDF4600B4FF27 /* WeatherBackgroundView.swift in Sources */,
 				A796A1402AE83BFD00054460 /* PreviewHelper.swift in Sources */,
 				A74A332D2ADC369E002B2B77 /* PlacesSearchView.swift in Sources */,
 				A74A332B2ADC35A5002B2B77 /* SidebarView.swift in Sources */,
-				A796A1452AE84E7700054460 /* HourForecastView.swift in Sources */,
+				A796A1452AE84E7700054460 /* HourWeatherView.swift in Sources */,
 				A76180B42AAB927800B4FF27 /* CloudyVisionApp.swift in Sources */,
 				A796A1432AE84E1600054460 /* HourlyForecastView.swift in Sources */,
 				A796A13E2AE837F400054460 /* TodaySummuryView.swift in Sources */,
