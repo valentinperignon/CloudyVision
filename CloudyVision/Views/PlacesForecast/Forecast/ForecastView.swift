@@ -15,17 +15,15 @@ struct ForecastView: View {
         Group {
             if let weather = place.weather {
                 ScrollView {
-                    VStack(spacing: 32) {
+                    VStack(spacing: 24) {
                         TodaySummuryView(currentWeather: weather.currentWeather, today: weather.today)
+                            .padding(.vertical, 24)
+                            .padding(.horizontal, 24)
 
                         HourlyForecastView(hourlyForecast: weather.hourlyForecast)
+                            .padding(.horizontal, 24)
 
-                        HStack(spacing: 32) {
-                            DailyForecastView(dailyForecast: weather.dailyForecast)
-
-                            // TODO: Will be replaced with real view
-                            DailyForecastView(dailyForecast: weather.dailyForecast)
-                        }
+                        DailyForecastView(dailyForecast: weather.dailyForecast)
                     }
                 }
             } else {
@@ -33,7 +31,6 @@ struct ForecastView: View {
                                        systemImage: "sun.max.trianglebadge.exclamationmark")
             }
         }
-        .padding()
         .navigationTitle(place.name)
     }
 }

@@ -12,12 +12,13 @@ struct DailyForecastView: View {
     let dailyForecast: Forecast<DayWeather>
 
     var body: some View {
-        VStack {
-            ForEach(dailyForecast.lazy.prefix(11).dropFirst(), id: \.date) { dayWeather in
-                DayWeatherView(dayWeather: dayWeather)
+        ScrollView(.horizontal) {
+            LazyHStack(spacing: 24) {
+                ForEach(dailyForecast.lazy.prefix(11).dropFirst(), id: \.date) { dayWeather in
+                    DayWeatherView(dayWeather: dayWeather)
+                }
             }
         }
-        .background(Material.regular)
-        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .contentMargins(.horizontal, 24, for: .scrollContent)
     }
 }

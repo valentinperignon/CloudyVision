@@ -12,19 +12,20 @@ struct DayWeatherView: View {
     let dayWeather: DayWeather
 
     var body: some View {
-        HStack {
-            if Calendar.current.isDateInToday(dayWeather.date) {
-                Text("Today")
-            } else {
-                Text(dayWeather.date, format: .dateTime.weekday(.abbreviated))
+        VStack(alignment: .leading, spacing: 0) {
+            Text(dayWeather.date, format: .dateTime.weekday().day().month())
+                .font(.headline)
+                .padding(.bottom, 4)
+
+            HStack {
+                WeatherSymbolView(symbolName: dayWeather.symbolName)
+
+                Text(dayWeather.condition.description)
+                    .foregroundStyle(.secondary)
             }
-
-            Spacer()
-
-            WeatherSymbolView(symbolName: dayWeather.symbolName)
-
-            Spacer()
         }
-        .frame(maxWidth: .infinity)
+        .padding(24)
+        .background(Material.regular)
+        .clipShape(RoundedRectangle(cornerRadius: 16))
     }
 }
