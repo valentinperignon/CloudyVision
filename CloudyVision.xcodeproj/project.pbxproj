@@ -33,7 +33,8 @@
 		A796A1472AE860B700054460 /* DailyForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A1462AE860B700054460 /* DailyForecastView.swift */; };
 		A796A1492AE860EE00054460 /* DayWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A1482AE860EE00054460 /* DayWeatherView.swift */; };
 		A796A14B2AE8E18000054460 /* WeatherSymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A14A2AE8E18000054460 /* WeatherSymbolView.swift */; };
-		A796A14D2AEAF52500054460 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A14C2AEAF52500054460 /* UIConstants.swift */; };
+		A796A1542AEAF7BA00054460 /* DayInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A1532AEAF7BA00054460 /* DayInfoView.swift */; };
+		A796A1562AEAF8FE00054460 /* DayInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A1552AEAF8FE00054460 /* DayInfoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,7 +67,8 @@
 		A796A1462AE860B700054460 /* DailyForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecastView.swift; sourceTree = "<group>"; };
 		A796A1482AE860EE00054460 /* DayWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayWeatherView.swift; sourceTree = "<group>"; };
 		A796A14A2AE8E18000054460 /* WeatherSymbolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherSymbolView.swift; sourceTree = "<group>"; };
-		A796A14C2AEAF52500054460 /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
+		A796A1532AEAF7BA00054460 /* DayInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInfoView.swift; sourceTree = "<group>"; };
+		A796A1552AEAF8FE00054460 /* DayInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInfoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +88,6 @@
 			children = (
 				A70356092AB75EF300AD452F /* CGRect+Center.swift */,
 				A796A13F2AE83BFD00054460 /* PreviewHelper.swift */,
-				A796A14C2AEAF52500054460 /* UIConstants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -249,6 +250,8 @@
 			children = (
 				A796A1462AE860B700054460 /* DailyForecastView.swift */,
 				A796A1482AE860EE00054460 /* DayWeatherView.swift */,
+				A796A1532AEAF7BA00054460 /* DayInfoView.swift */,
+				A796A1552AEAF8FE00054460 /* DayInfoCell.swift */,
 			);
 			path = Day;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				A703560A2AB75EF300AD452F /* CGRect+Center.swift in Sources */,
 				A70356072AB5E8E800AD452F /* OnboardingConstants.swift in Sources */,
 				A796A1492AE860EE00054460 /* DayWeatherView.swift in Sources */,
+				A796A1542AEAF7BA00054460 /* DayInfoView.swift in Sources */,
 				A76180B62AAB927800B4FF27 /* ForecastView.swift in Sources */,
 				A76180DD2AADDF4600B4FF27 /* WeatherBackgroundView.swift in Sources */,
 				A796A1402AE83BFD00054460 /* PreviewHelper.swift in Sources */,
@@ -344,13 +348,13 @@
 				A796A13C2AE701B100054460 /* TemperatureView.swift in Sources */,
 				A74A33272ADBF37C002B2B77 /* PlaceCell.swift in Sources */,
 				A796A1472AE860B700054460 /* DailyForecastView.swift in Sources */,
+				A796A1562AEAF8FE00054460 /* DayInfoCell.swift in Sources */,
 				A76180DB2AACCF8800B4FF27 /* PlacesForecastView.swift in Sources */,
 				A796A13A2AE6FDC800054460 /* ExtremumTemperatureView.swift in Sources */,
 				A76180D52AABDADB00B4FF27 /* OnboardingView.swift in Sources */,
 				A76180D82AAC771B00B4FF27 /* AnimatableTitle.swift in Sources */,
 				A796A14B2AE8E18000054460 /* WeatherSymbolView.swift in Sources */,
 				A76180C82AABABD600B4FF27 /* ContentView.swift in Sources */,
-				A796A14D2AEAF52500054460 /* UIConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

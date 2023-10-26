@@ -5,13 +5,14 @@
 //  Created by Valentin Perignon on 23/10/2023.
 //
 
+import CVCore
 import SwiftUI
 
 struct TemperatureView: View {
     let temperature: Measurement<UnitTemperature>
 
     var body: some View {
-        Text("\(Int(temperature.value))\(temperature.unit.symbol)")
+        Text("\(Constants.formattedTemperature(temperature))")
     }
 }
 

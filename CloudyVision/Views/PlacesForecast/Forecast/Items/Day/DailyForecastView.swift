@@ -5,6 +5,7 @@
 //  Created by Valentin Perignon on 24/10/2023.
 //
 
+import CVCore
 import SwiftUI
 import WeatherKit
 

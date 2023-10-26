@@ -5,6 +5,7 @@
 //  Created by Valentin Perignon on 24/10/2023.
 //
 
+import CVCore
 import SwiftUI
 import WeatherKit
 
@@ -23,7 +24,9 @@ struct DayWeatherView: View {
                 Text(dayWeather.condition.description)
                     .foregroundStyle(.secondary)
             }
-            .padding(.bottom, 8)
+            .padding(.bottom, 16)
+
+            DayInfoView(dayWeather: dayWeather)
         }
         .padding(UIConstants.blocksSpacing)
         .containerRelativeFrame(.horizontal, count: 2, spacing: 48, alignment: .leading)
