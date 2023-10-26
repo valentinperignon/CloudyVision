@@ -20,6 +20,6 @@ struct HourlyForecastView: View {
             }
         }   
         .background(Material.regular)
-        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .clipShape(RoundedRectangle(cornerRadius: UIConstants.blockRadius))
     }
 }

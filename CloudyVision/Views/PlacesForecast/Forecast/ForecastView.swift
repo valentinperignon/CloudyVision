@@ -15,13 +15,13 @@ struct ForecastView: View {
         Group {
             if let weather = place.weather {
                 ScrollView {
-                    VStack(spacing: 24) {
+                    VStack(spacing: UIConstants.blocksSpacing) {
                         TodaySummuryView(currentWeather: weather.currentWeather, today: weather.today)
                             .padding(.vertical, 40)
-                            .padding(.horizontal, 24)
+                            .padding(.horizontal, UIConstants.blocksSpacing)
 
                         HourlyForecastView(hourlyForecast: weather.hourlyForecast)
-                            .padding(.horizontal, 24)
+                            .padding(.horizontal, UIConstants.blocksSpacing)
 
                         DailyForecastView(dailyForecast: weather.dailyForecast)
                     }

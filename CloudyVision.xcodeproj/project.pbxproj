@@ -33,6 +33,7 @@
 		A796A1472AE860B700054460 /* DailyForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A1462AE860B700054460 /* DailyForecastView.swift */; };
 		A796A1492AE860EE00054460 /* DayWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A1482AE860EE00054460 /* DayWeatherView.swift */; };
 		A796A14B2AE8E18000054460 /* WeatherSymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A14A2AE8E18000054460 /* WeatherSymbolView.swift */; };
+		A796A14D2AEAF52500054460 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A14C2AEAF52500054460 /* UIConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		A796A1462AE860B700054460 /* DailyForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecastView.swift; sourceTree = "<group>"; };
 		A796A1482AE860EE00054460 /* DayWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayWeatherView.swift; sourceTree = "<group>"; };
 		A796A14A2AE8E18000054460 /* WeatherSymbolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherSymbolView.swift; sourceTree = "<group>"; };
+		A796A14C2AEAF52500054460 /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			children = (
 				A70356092AB75EF300AD452F /* CGRect+Center.swift */,
 				A796A13F2AE83BFD00054460 /* PreviewHelper.swift */,
+				A796A14C2AEAF52500054460 /* UIConstants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -217,13 +220,37 @@
 		A796A1412AE84E0500054460 /* Items */ = {
 			isa = PBXGroup;
 			children = (
+				A796A14E2AEAF72300054460 /* Today */,
+				A796A14F2AEAF72B00054460 /* Hour */,
+				A796A1502AEAF73600054460 /* Day */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		A796A14E2AEAF72300054460 /* Today */ = {
+			isa = PBXGroup;
+			children = (
 				A796A13D2AE837F400054460 /* TodaySummuryView.swift */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
+		A796A14F2AEAF72B00054460 /* Hour */ = {
+			isa = PBXGroup;
+			children = (
 				A796A1422AE84E1600054460 /* HourlyForecastView.swift */,
 				A796A1442AE84E7700054460 /* HourWeatherView.swift */,
+			);
+			path = Hour;
+			sourceTree = "<group>";
+		};
+		A796A1502AEAF73600054460 /* Day */ = {
+			isa = PBXGroup;
+			children = (
 				A796A1462AE860B700054460 /* DailyForecastView.swift */,
 				A796A1482AE860EE00054460 /* DayWeatherView.swift */,
 			);
-			path = Items;
+			path = Day;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +350,7 @@
 				A76180D82AAC771B00B4FF27 /* AnimatableTitle.swift in Sources */,
 				A796A14B2AE8E18000054460 /* WeatherSymbolView.swift in Sources */,
 				A76180C82AABABD600B4FF27 /* ContentView.swift in Sources */,
+				A796A14D2AEAF52500054460 /* UIConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

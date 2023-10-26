@@ -13,14 +13,15 @@ struct DailyForecastView: View {
 
     var body: some View {
         ScrollView(.horizontal) {
-            LazyHStack(spacing: 24) {
+            LazyHStack(spacing: UIConstants.blocksSpacing) {
                 ForEach(dailyForecast.lazy.prefix(11).dropFirst(), id: \.date) { dayWeather in
                     DayWeatherView(dayWeather: dayWeather)
                 }
             }
             .scrollTargetLayout()
         }
-        .contentMargins(.horizontal, 24, for: .scrollContent)
+        .contentMargins(.horizontal, UIConstants.blocksSpacing, for: .scrollContent)
+        .scrollIndicators(.hidden)
         .scrollTargetBehavior(.viewAligned)
     }
 }

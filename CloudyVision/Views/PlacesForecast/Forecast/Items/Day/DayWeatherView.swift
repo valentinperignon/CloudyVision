@@ -17,17 +17,18 @@ struct DayWeatherView: View {
                 .font(.headline)
                 .padding(.bottom, 4)
 
-            HStack {
+            HStack() {
                 WeatherSymbolView(symbolName: dayWeather.symbolName)
 
                 Text(dayWeather.condition.description)
                     .foregroundStyle(.secondary)
             }
+            .padding(.bottom, 8)
         }
-        .padding(24)
+        .padding(UIConstants.blocksSpacing)
         .containerRelativeFrame(.horizontal, count: 2, spacing: 48, alignment: .leading)
         .background(Material.regular)
-        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .clipShape(RoundedRectangle(cornerRadius: UIConstants.blockRadius))
         .scrollTransition(axis: .horizontal) { content, phase in
             content
                 .opacity(phase.isIdentity ? 1 : 0.7)
