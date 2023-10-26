@@ -17,7 +17,7 @@ struct ForecastView: View {
                 ScrollView {
                     VStack(spacing: 24) {
                         TodaySummuryView(currentWeather: weather.currentWeather, today: weather.today)
-                            .padding(.vertical, 24)
+                            .padding(.vertical, 40)
                             .padding(.horizontal, 24)
 
                         HourlyForecastView(hourlyForecast: weather.hourlyForecast)

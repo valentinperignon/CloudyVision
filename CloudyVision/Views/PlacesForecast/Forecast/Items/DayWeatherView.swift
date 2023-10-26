@@ -25,7 +25,12 @@ struct DayWeatherView: View {
             }
         }
         .padding(24)
+        .containerRelativeFrame(.horizontal, count: 2, spacing: 48, alignment: .leading)
         .background(Material.regular)
         .clipShape(RoundedRectangle(cornerRadius: 16))
+        .scrollTransition(axis: .horizontal) { content, phase in
+            content
+                .opacity(phase.isIdentity ? 1 : 0.7)
+        }
     }
 }

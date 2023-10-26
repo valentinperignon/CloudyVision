@@ -18,7 +18,9 @@ struct DailyForecastView: View {
                     DayWeatherView(dayWeather: dayWeather)
                 }
             }
+            .scrollTargetLayout()
         }
         .contentMargins(.horizontal, 24, for: .scrollContent)
+        .scrollTargetBehavior(.viewAligned)
     }
 }
