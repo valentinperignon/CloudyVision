@@ -22,5 +22,7 @@ struct HourWeatherView: View {
                 .font(.caption)
                 .foregroundStyle(.secondary)
         }
+        .padding(.vertical, 32)
+        .padding(.horizontal, 24)
     }
 }

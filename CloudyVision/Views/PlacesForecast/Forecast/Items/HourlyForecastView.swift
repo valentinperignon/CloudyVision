@@ -13,13 +13,12 @@ struct HourlyForecastView: View {
 
     var body: some View {
         ScrollView(.horizontal) {
-            HStack(spacing: 32) {
-                ForEach(hourlyForecast.lazy.prefix(24), id: \.date) { forecast in
-                    HourWeatherView(hourWeather: forecast)
+            LazyHStack(spacing: 0) {
+                ForEach(hourlyForecast.lazy.prefix(24), id: \.date) { hourWeather in
+                    HourWeatherView(hourWeather: hourWeather)
                 }
             }
-            .padding(24)
-        }
+        }   
         .background(Material.regular)
         .clipShape(RoundedRectangle(cornerRadius: 16))
     }

@@ -21,8 +21,7 @@ struct DayWeatherView: View {
 
             Spacer()
 
-            Image(systemName: "\(dayWeather.symbolName).fill")
-                .symbolRenderingMode(.multicolor)
+            WeatherSymbolView(symbolName: dayWeather.symbolName)
 
             Spacer()
         }
