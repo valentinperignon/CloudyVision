@@ -13,17 +13,18 @@ struct DayInfoCell: View {
     let value: String
 
     var body: some View {
-        HStack(spacing: 0) {
-            HStack(spacing: 4) {
-                Image(systemName: symbolName)
-                Text(label.uppercased())
-            }
-            .foregroundStyle(.secondary)
-
-            Spacer()
-
+        VStack {
+            Image(systemName: symbolName)
+                .font(.title2)
+                .symbolRenderingMode(.multicolor)
             Text(value)
+                .padding(.bottom, 4)
+
+            Text(label.uppercased())
+                .font(.caption)
+                .foregroundStyle(.secondary)
         }
+        .frame(maxWidth: .infinity)
     }
 }
 

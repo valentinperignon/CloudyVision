@@ -23,8 +23,15 @@ struct DayWeatherView: View {
 
                 Text(dayWeather.condition.description)
                     .foregroundStyle(.secondary)
+
+                if dayWeather.precipitationChance > 0 {
+                    Text(dayWeather.precipitationChance, format: .percent)
+                        .foregroundStyle(Color.rain)
+                        .font(.caption)
+                        .bold()
+                }
             }
-            .padding(.bottom, 16)
+            .padding(.bottom, 24)
 
             DayInfoView(dayWeather: dayWeather)
         }
