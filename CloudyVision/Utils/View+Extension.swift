@@ -11,7 +11,7 @@ import SwiftUI
 extension Image {
     static func safeSFSymbol(_ name: String) -> Image {
         let filledSymbol = "\(name).fill"
-        if let uiImage = UIImage(systemName: filledSymbol) {
+        if let _ = UIImage(systemName: filledSymbol) {
             return Image(systemName: filledSymbol)
         } else {
             return Image(systemName: name)
