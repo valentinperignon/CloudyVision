@@ -25,8 +25,13 @@ struct ForecastView: View {
 
                         DailyForecastView(dailyForecast: weather.dailyForecast)
 
-                        InfoRowView(/*visibility: weather.currentWeather.visibility.*/)
+                        InfoRowView(feelsLike: weather.currentWeather.apparentTemperature,
+                                    amount: weather.today.precipitationAmount,
+                                    uvIndex: weather.currentWeather.uvIndex,
+                                    humidity: weather.currentWeather.humidity,
+                                    visibility: weather.currentWeather.visibility)
                     }
+                    .padding(.bottom, UIConstants.blocksSpacing)
                 }
             } else {
                 ContentUnavailableView("Weather Unavailable",

@@ -13,7 +13,7 @@ public enum Constants {
         return "\(Int(temperature.value))\(temperature.unit.symbol)"
     }
 
-    public static func formattedAmount(_ amount: Measurement<UnitLength>) -> String {
+    public static func formattedLength(_ amount: Measurement<UnitLength>) -> String {
         return "\(Int(amount.value)) \(amount.unit.symbol)"
     }
 

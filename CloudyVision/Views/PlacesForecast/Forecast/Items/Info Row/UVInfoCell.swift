@@ -1,26 +1,29 @@
 //
-//  VisibilityInfoCell.swift
+//  UVInfoCell.swift
 //  CloudyVision
 //
-//  Created by Valentin Perignon on 27/10/2023.
+//  Created by Valentin Perignon on 29/10/2023.
 //
 
 import CVCore
 import SwiftUI
+import WeatherKit
 
-struct VisibilityInfoCell: View {
-    let visibility: Measurement<UnitLength>
+struct UVInfoCell: View {
+    let uvIndex: UVIndex
 
     var body: some View {
         VStack(alignment: .leading) {
-            Image(systemName: "eyes.inverse")
+            Image(systemName: "sunglasses")
                 .font(.largeTitle)
-            Text(Constants.formattedLength(visibility))
+            Text("\(uvIndex.value)")
                 .font(.title)
+            Text(uvIndex.category.description)
+                .font(.subheadline)
 
             Spacer()
 
-            Text("Visibility".uppercased())
+            Text("UV Index".uppercased())
                 .font(.caption)
                 .foregroundStyle(.secondary)
         }
@@ -29,8 +32,4 @@ struct VisibilityInfoCell: View {
         .aspectRatio(1, contentMode: .fill)
         .forecastItem()
     }
-}
-
-#Preview {
-    VisibilityInfoCell(visibility: .init(value: 10, unit: .kilometers))
 }

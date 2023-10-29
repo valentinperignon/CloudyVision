@@ -1,26 +1,26 @@
 //
-//  VisibilityInfoCell.swift
+//  HumidityInfoCell.swift
 //  CloudyVision
 //
-//  Created by Valentin Perignon on 27/10/2023.
+//  Created by Valentin Perignon on 29/10/2023.
 //
 
 import CVCore
 import SwiftUI
 
-struct VisibilityInfoCell: View {
-    let visibility: Measurement<UnitLength>
+struct HumidityInfoCell: View {
+    let humidity: Double
 
     var body: some View {
         VStack(alignment: .leading) {
-            Image(systemName: "eyes.inverse")
+            Image(systemName: "drop.degreesign")
                 .font(.largeTitle)
-            Text(Constants.formattedLength(visibility))
+            Text(humidity, format: .percent)
                 .font(.title)
 
             Spacer()
 
-            Text("Visibility".uppercased())
+            Text("Humidity".uppercased())
                 .font(.caption)
                 .foregroundStyle(.secondary)
         }
@@ -32,5 +32,5 @@ struct VisibilityInfoCell: View {
 }
 
 #Preview {
-    VisibilityInfoCell(visibility: .init(value: 10, unit: .kilometers))
+    HumidityInfoCell(humidity: 0.5)
 }
