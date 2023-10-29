@@ -37,8 +37,7 @@ struct DayWeatherView: View {
         }
         .padding(UIConstants.blocksSpacing)
         .containerRelativeFrame(.horizontal, count: 2, spacing: 48, alignment: .leading)
-        .background(Material.regular)
-        .clipShape(RoundedRectangle(cornerRadius: UIConstants.blockRadius))
+        .forecastItem()
         .scrollTransition(axis: .horizontal) { content, phase in
             content
                 .opacity(phase.isIdentity ? 1 : 0.7)

@@ -24,6 +24,8 @@ struct ForecastView: View {
                             .padding(.horizontal, UIConstants.blocksSpacing)
 
                         DailyForecastView(dailyForecast: weather.dailyForecast)
+
+                        InfoRowView()
                     }
                 }
             } else {

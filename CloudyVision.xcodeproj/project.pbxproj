@@ -10,6 +10,7 @@
 		A70356072AB5E8E800AD452F /* OnboardingConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70356062AB5E8E800AD452F /* OnboardingConstants.swift */; };
 		A703560A2AB75EF300AD452F /* CGRect+Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70356092AB75EF300AD452F /* CGRect+Center.swift */; };
 		A719B6E22AD5E05000DC5CAA /* PlacesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A719B6E12AD5E05000DC5CAA /* PlacesListView.swift */; };
+		A73263E82AEEF8950086C13F /* ItemModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73263E72AEEF8950086C13F /* ItemModifier.swift */; };
 		A74A33272ADBF37C002B2B77 /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74A33262ADBF37C002B2B77 /* PlaceCell.swift */; };
 		A74A332B2ADC35A5002B2B77 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74A332A2ADC35A5002B2B77 /* SidebarView.swift */; };
 		A74A332D2ADC369E002B2B77 /* PlacesSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74A332C2ADC369E002B2B77 /* PlacesSearchView.swift */; };
@@ -35,12 +36,15 @@
 		A796A14B2AE8E18000054460 /* WeatherSymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A14A2AE8E18000054460 /* WeatherSymbolView.swift */; };
 		A796A1542AEAF7BA00054460 /* DayInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A1532AEAF7BA00054460 /* DayInfoView.swift */; };
 		A796A1562AEAF8FE00054460 /* DayInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A1552AEAF8FE00054460 /* DayInfoCell.swift */; };
+		A796A1592AEC2C5700054460 /* InfoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A1582AEC2C5700054460 /* InfoRowView.swift */; };
+		A796A15B2AEC2DE500054460 /* VisibilityInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796A15A2AEC2DE500054460 /* VisibilityInfoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A70356062AB5E8E800AD452F /* OnboardingConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingConstants.swift; sourceTree = "<group>"; };
 		A70356092AB75EF300AD452F /* CGRect+Center.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Center.swift"; sourceTree = "<group>"; };
 		A719B6E12AD5E05000DC5CAA /* PlacesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListView.swift; sourceTree = "<group>"; };
+		A73263E72AEEF8950086C13F /* ItemModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModifier.swift; sourceTree = "<group>"; };
 		A74A33262ADBF37C002B2B77 /* PlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
 		A74A332A2ADC35A5002B2B77 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		A74A332C2ADC369E002B2B77 /* PlacesSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesSearchView.swift; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 		A796A14A2AE8E18000054460 /* WeatherSymbolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherSymbolView.swift; sourceTree = "<group>"; };
 		A796A1532AEAF7BA00054460 /* DayInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInfoView.swift; sourceTree = "<group>"; };
 		A796A1552AEAF8FE00054460 /* DayInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInfoCell.swift; sourceTree = "<group>"; };
+		A796A1582AEC2C5700054460 /* InfoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRowView.swift; sourceTree = "<group>"; };
+		A796A15A2AEC2DE500054460 /* VisibilityInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibilityInfoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +230,8 @@
 				A796A14E2AEAF72300054460 /* Today */,
 				A796A14F2AEAF72B00054460 /* Hour */,
 				A796A1502AEAF73600054460 /* Day */,
+				A796A1572AEC2C3E00054460 /* Info Row */,
+				A73263E72AEEF8950086C13F /* ItemModifier.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -254,6 +262,15 @@
 				A796A1552AEAF8FE00054460 /* DayInfoCell.swift */,
 			);
 			path = Day;
+			sourceTree = "<group>";
+		};
+		A796A1572AEC2C3E00054460 /* Info Row */ = {
+			isa = PBXGroup;
+			children = (
+				A796A1582AEC2C5700054460 /* InfoRowView.swift */,
+				A796A15A2AEC2DE500054460 /* VisibilityInfoCell.swift */,
+			);
+			path = "Info Row";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A74A332F2ADDD402002B2B77 /* SearchResultCell.swift in Sources */,
+				A796A1592AEC2C5700054460 /* InfoRowView.swift in Sources */,
 				A719B6E22AD5E05000DC5CAA /* PlacesListView.swift in Sources */,
 				A703560A2AB75EF300AD452F /* CGRect+Center.swift in Sources */,
 				A70356072AB5E8E800AD452F /* OnboardingConstants.swift in Sources */,
@@ -343,6 +361,7 @@
 				A74A332B2ADC35A5002B2B77 /* SidebarView.swift in Sources */,
 				A796A1452AE84E7700054460 /* HourWeatherView.swift in Sources */,
 				A76180B42AAB927800B4FF27 /* CloudyVisionApp.swift in Sources */,
+				A796A15B2AEC2DE500054460 /* VisibilityInfoCell.swift in Sources */,
 				A796A1432AE84E1600054460 /* HourlyForecastView.swift in Sources */,
 				A796A13E2AE837F400054460 /* TodaySummuryView.swift in Sources */,
 				A796A13C2AE701B100054460 /* TemperatureView.swift in Sources */,
@@ -355,6 +374,7 @@
 				A76180D82AAC771B00B4FF27 /* AnimatableTitle.swift in Sources */,
 				A796A14B2AE8E18000054460 /* WeatherSymbolView.swift in Sources */,
 				A76180C82AABABD600B4FF27 /* ContentView.swift in Sources */,
+				A73263E82AEEF8950086C13F /* ItemModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
