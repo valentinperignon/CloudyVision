@@ -14,9 +14,15 @@ struct DayWeatherView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text(dayWeather.date, format: .dateTime.weekday().day().month())
-                .font(.headline)
-                .padding(.bottom, 4)
+            Group {
+                if Calendar.current.isDateInToday(dayWeather.date) {
+                    Text("Today")
+                } else {
+                    Text(dayWeather.date, format: .dateTime.weekday().day().month())
+                }
+            }
+            .font(.headline)
+            .padding(.bottom, 4)
 
             HStack() {
                 WeatherSymbolView(symbolName: dayWeather.symbolName)

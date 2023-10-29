@@ -25,7 +25,7 @@ struct ForecastView: View {
 
                         DailyForecastView(dailyForecast: weather.dailyForecast)
 
-                        InfoRowView()
+                        InfoRowView(/*visibility: weather.currentWeather.visibility.*/)
                     }
                 }
             } else {

@@ -15,12 +15,17 @@ struct HourWeatherView: View {
         VStack(spacing: 24) {
             TemperatureView(temperature: hourWeather.temperature)
 
-            Image(systemName: "\(hourWeather.symbolName).fill")
-                .symbolRenderingMode(.multicolor)
+            WeatherSymbolView(symbolName: hourWeather.symbolName)
 
-            Text(hourWeather.date, format: .dateTime.hour())
-                .font(.caption)
-                .foregroundStyle(.secondary)
+            Group {
+                if Calendar.current.isDate(hourWeather.date, equalTo: .now, toGranularity: .hour) {
+                    Text("Now")
+                } else {
+                    Text(hourWeather.date, format: .dateTime.hour())
+                }
+            }
+            .font(.caption)
+            .foregroundStyle(.secondary)
         }
         .padding(.vertical, 32)
         .padding(.horizontal, 24)

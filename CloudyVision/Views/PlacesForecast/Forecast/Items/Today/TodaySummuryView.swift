@@ -19,7 +19,7 @@ struct TodaySummuryView: View {
                 .font(.system(size: 72))
                 .padding(.bottom, 8)
 
-            Text(today.condition.description)
+            Text(currentWeather.condition.description)
                 .font(.title)
                 .foregroundStyle(.secondary)
 

@@ -15,7 +15,7 @@ struct DailyForecastView: View {
     var body: some View {
         ScrollView(.horizontal) {
             LazyHStack(spacing: UIConstants.blocksSpacing) {
-                ForEach(dailyForecast.lazy.prefix(11).dropFirst(), id: \.date) { dayWeather in
+                ForEach(dailyForecast.lazy, id: \.date) { dayWeather in
                     DayWeatherView(dayWeather: dayWeather)
                 }
             }

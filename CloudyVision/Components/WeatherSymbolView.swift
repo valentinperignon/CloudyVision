@@ -11,7 +11,7 @@ struct WeatherSymbolView: View {
     let symbolName: String
 
     var body: some View {
-        Image(systemName: "\(symbolName).fill")
+        Image.safeSFSymbol(symbolName)
             .symbolRenderingMode(.multicolor)
     }
 }

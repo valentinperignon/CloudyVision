@@ -9,7 +9,12 @@ import SwiftUI
 
 struct VisibilityInfoCell: View {
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            HStack {
+                Image(systemName: "eyes.inverse")
+                Text("")
+            }
+        }
     }
 }
 

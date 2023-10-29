@@ -24,7 +24,15 @@ public final class WeatherManager {
         guard place.weather?.isInvalid != false else { return }
         guard let location = place.coordinates?.transformToCLLocation() else { return }
 
-        let (current, hourly, daily) = try await service.weather(for: location, including: .current, .hourly, .daily)
+        let startHour = Date.now
+        let finalHour = Calendar.current.date(byAdding: .hour, value: 24, to: startHour)!
+        let startDay = Date.now
+        let finalDay = Calendar.current.date(byAdding: .day, value: 10, to: startDay)!
+
+        let (current, hourly, daily) = try await service.weather(
+            for: location,
+            including: .current, .hourly(startDate: startHour, endDate: finalHour), .daily(startDate: startDay, endDate: finalDay)
+        )
         place.weather = WeatherData(currentWeather: current, hourlyForecast: hourly, dailyForecast: daily)
     }
 }
