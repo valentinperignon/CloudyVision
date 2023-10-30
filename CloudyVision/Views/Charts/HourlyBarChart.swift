@@ -32,5 +32,5 @@ struct HourlyBarChart<Value: Plottable>: View {
 }
 
 #Preview {
-    HourlyBarChart(forecast: [], yLabel: "Preview", yData: \.cloudCover)
+    HourlyBarChart(forecast: [], yLabel: "Humidity", yData: \.humidity)
 }

@@ -53,7 +53,14 @@
       }
     },
     "Distance" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Distance"
+          }
+        }
+      }
     },
     "Favorite places" : {
       "extractionState" : "manual",
@@ -67,10 +74,24 @@
       }
     },
     "Hour" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heure"
+          }
+        }
+      }
     },
     "Humidity" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Humidité"
+          }
+        }
+      }
     },
     "Launch App" : {
       "localizations" : {
@@ -103,13 +124,24 @@
       }
     },
     "Precipitation" : {
-
-    },
-    "Preview" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Précipitation"
+          }
+        }
+      }
     },
     "Temperature" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Température"
+          }
+        }
+      }
     },
     "Today" : {
       "localizations" : {
