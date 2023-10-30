@@ -18,8 +18,11 @@ struct CloudyVisionApp: App {
                 .environment(appModel)
         }
 
-        WindowGroup(id: "Charts") {
-
+        WindowGroup(id: Constants.windowCharts, for: ChartType.self) { chartType in
+            ChartView(chartType: chartType.wrappedValue ?? .feelsLike)
+                .environment(appModel)
         }
+        .windowStyle(.volumetric)
+        .defaultSize(width: 1, height: 0.6, depth: 0.1, in: .meters)
     }
 }

@@ -11,8 +11,7 @@ import SwiftUI
 struct ItemModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .background(Material.regular)
-            .clipShape(RoundedRectangle(cornerRadius: UIConstants.blockRadius))
+            .background(Material.regular, in: .rect(cornerRadius: UIConstants.blockRadius))
     }
 }
 

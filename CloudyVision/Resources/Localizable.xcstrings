@@ -12,6 +12,7 @@
       }
     },
     "%lld" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -62,7 +63,7 @@
         }
       }
     },
-    "Hello, World!" : {
+    "Hour" : {
 
     },
     "Launch App" : {
@@ -94,6 +95,9 @@
           }
         }
       }
+    },
+    "Temperature" : {
+
     },
     "Today" : {
       "localizations" : {

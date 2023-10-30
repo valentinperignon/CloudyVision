@@ -18,15 +18,11 @@ struct InfoRowView: View {
 
     var body: some View {
         HStack(spacing: UIConstants.blocksSpacing) {
-            FeelsLikeInfoCell(feelsLike: feelsLike)
-
-            PrecipitationInfoCell(amount: amount)
-
-            UVInfoCell(uvIndex: uvIndex)
-
-            HumidityInfoCell(humidity: humidity)
-
-            VisibilityInfoCell(visibility: visibility)
+            InfoRowCell(systemIcon: "thermometer.medium", title: "Feels Like", value: Constants.formattedTemperature(feelsLike))
+            InfoRowCell(systemIcon: "umbrella", title: "Precipitation", value: Constants.formattedLength(amount))
+            InfoRowCell(systemIcon: "sunglasses", title: "UV Index", value: "\(uvIndex.value)", hint: uvIndex.category.description)
+            InfoRowCell(systemIcon: "drop.degreesign", title: "Humidity", value: humidity.formatted(.percent))
+            InfoRowCell(systemIcon: "eyes.inverse", title: "Visibility", value: Constants.formattedLength(visibility))
         }
         .padding(.horizontal, UIConstants.blocksSpacing)
     }
