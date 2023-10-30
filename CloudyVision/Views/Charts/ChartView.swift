@@ -7,14 +7,33 @@
 
 import CVCore
 import SwiftUI
+import WeatherKit
+
+extension HourWeather: Identifiable {
+    public var id: Date { date }
+}
 
 struct ChartView: View {
+    @Environment(CloudyVisionModel.self) private var appModel
+
     let chartType: ChartType
+
+    private var hourlyForecast: [HourWeather] {
+        appModel.selectedPlace?.weather?.hourlyForecast.forecast ?? []
+    }
 
     var body: some View {
         switch chartType {
         case .feelsLike:
-            FeelsLikeChartsView()
+            HourlyLineChart(forecast: hourlyForecast, yLabel: "Temperature", yData: \.apparentTemperature.value)
+        case .precipitations:
+            HourlyBarChart(forecast: hourlyForecast, yLabel: "Precipitation", yData: \.precipitationAmount.value)
+        case .uvIndex:
+            HourlyLineChart(forecast: hourlyForecast, yLabel: "Humidity", yData: \.uvIndex.value)
+        case .humidity:
+            HourlyBarChart(forecast: hourlyForecast, yLabel: "Humidity", yData: \.humidity)
+        case .visibility:
+            HourlyLineChart(forecast: hourlyForecast, yLabel: "Distance", yData: \.visibility.value)
         }
     }
 }

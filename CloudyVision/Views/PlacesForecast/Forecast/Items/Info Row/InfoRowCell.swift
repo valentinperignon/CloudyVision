@@ -22,6 +22,7 @@ struct InfoRowButtonStyle: ButtonStyle {
 struct InfoRowCell: View {
     @Environment(\.openWindow) private var openWindow
 
+    let chartType: ChartType
     let systemIcon: String
     let title: String
     let value: String
@@ -29,7 +30,7 @@ struct InfoRowCell: View {
 
     var body: some View {
         Button {
-            openWindow(id: Constants.windowCharts, value: ChartType.feelsLike)
+            openWindow(id: Constants.windowCharts, value: chartType)
         } label: {
             VStack(alignment: .leading) {
                 Image(systemName: systemIcon)
@@ -54,5 +55,5 @@ struct InfoRowCell: View {
 }
 
 #Preview {
-    InfoRowCell(systemIcon: "thermometer.medium", title: "Feels Like", value: "10°C")
+    InfoRowCell(chartType: .feelsLike, systemIcon: "thermometer.medium", title: "Feels Like", value: "10°C")
 }

@@ -52,6 +52,9 @@
         }
       }
     },
+    "Distance" : {
+
+    },
     "Favorite places" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -64,6 +67,9 @@
       }
     },
     "Hour" : {
+
+    },
+    "Humidity" : {
 
     },
     "Launch App" : {
@@ -95,6 +101,12 @@
           }
         }
       }
+    },
+    "Precipitation" : {
+
+    },
+    "Preview" : {
+
     },
     "Temperature" : {
 
