@@ -11,7 +11,7 @@ import SwiftUI
 struct PlacesListView: View {
     @Environment(LocationManager.self) private var locationManager
 
-    @Binding var selectedPlace: Place?
+    @Bindable var forecastModel: ForecastModel
 
     private var allPlaces: [Place] {
         var list = Place.allPlaces
@@ -22,14 +22,9 @@ struct PlacesListView: View {
     }
 
     var body: some View {
-        List(allPlaces, selection: $selectedPlace) { place in
-            Button {
-                selectedPlace = place
-            } label: {
+        List(allPlaces, selection: $forecastModel.selectedPlace) { place in
+            NavigationLink(value: place) {
                 PlaceCell(place: place)
-            }
-            .onChange(of: place) {
-                print("PLACE \(place.name) HAS CHANGED")
             }
         }
         .onAppear {
@@ -41,13 +36,13 @@ struct PlacesListView: View {
     }
 
     private func selectDefaultPlace() {
-        guard selectedPlace == nil else { return }
+        guard forecastModel.selectedPlace == nil else { return }
         guard locationManager.status != .authorizedWhenInUse || locationManager.currentPlace != nil else { return }
 
-        selectedPlace = allPlaces.first
+        forecastModel.selectedPlace = allPlaces.first
     }
 }
 
 #Preview {
-    PlacesListView(selectedPlace: .constant(nil))
+    PlacesListView(forecastModel: ForecastModel())
 }

@@ -6,39 +6,39 @@
 //
 
 import CVCore
+import OSLog
 import SwiftUI
 
 struct ForecastView: View {
+    @State private var isLoading = false
+
     let place: Place
 
     var body: some View {
         Group {
             if let weather = place.weather {
-                ScrollView {
-                    VStack(spacing: UIConstants.blocksSpacing) {
-                        TodaySummuryView(currentWeather: weather.currentWeather, today: weather.today)
-                            .padding(.vertical, 40)
-                            .padding(.horizontal, UIConstants.blocksSpacing)
-
-                        HourlyForecastView(hourlyForecast: weather.hourlyForecast)
-                            .padding(.horizontal, UIConstants.blocksSpacing)
-
-                        DailyForecastView(dailyForecast: weather.dailyForecast)
-
-                        InfoRowView(feelsLike: weather.currentWeather.apparentTemperature,
-                                    amount: weather.today.precipitationAmount,
-                                    uvIndex: weather.currentWeather.uvIndex,
-                                    humidity: weather.currentWeather.humidity,
-                                    visibility: weather.currentWeather.visibility)
-                    }
-                    .padding(.bottom, UIConstants.blocksSpacing)
-                }
+                WeatherDataView(weather: weather)
+            } else if isLoading {
+                LoadingWeatherView()
             } else {
-                ContentUnavailableView("Weather Unavailable",
-                                       systemImage: "sun.max.trianglebadge.exclamationmark")
+                ContentUnavailableView("Weather Unavailable", systemImage: "sun.max.trianglebadge.exclamationmark")
             }
         }
         .navigationTitle(place.name)
+        .onChange(of: place) {
+            Task {
+                do {
+                    if place.coordinates == nil {
+                        try await place.fetchCoordinate()
+                    }
+                    isLoading = true
+                    try await WeatherManager.shared.fetchWeather(for: place)
+                } catch {
+                    Logger.placesForecast.error("Error when user changed selected place: \(error.localizedDescription)")
+                }
+                isLoading = false
+            }
+        }
     }
 }
 

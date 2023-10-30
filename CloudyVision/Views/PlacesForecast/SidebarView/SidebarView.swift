@@ -9,16 +9,16 @@ import CVCore
 import SwiftUI
 
 struct SidebarView: View {
-    @State private var placeSearcher = PlaceSearcher()
+    @Environment(ForecastModel.self) private var forecastModel
 
-    @Binding var selectedPlace: Place?
+    @State private var placeSearcher = PlaceSearcher()
 
     var body: some View {
         Group {
             if placeSearcher.isSearching {
-                PlacesSearchView(placeSearcher: placeSearcher, selectedPlace: $selectedPlace)
+                PlacesSearchView(placeSearcher: placeSearcher, forecastModel: forecastModel)
             } else {
-                PlacesListView(selectedPlace: $selectedPlace)
+                PlacesListView(forecastModel: forecastModel)
             }
         }
         .navigationTitle("Weather")
@@ -27,5 +27,5 @@ struct SidebarView: View {
 }
 
 #Preview {
-    SidebarView(selectedPlace: .constant(nil))
+    SidebarView()
 }

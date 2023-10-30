@@ -48,6 +48,9 @@
         }
       }
     },
+    "Loading" : {
+
+    },
     "Now" : {
       "localizations" : {
         "fr" : {
@@ -67,6 +70,9 @@
           }
         }
       }
+    },
+    "We analyze the weather for the next few days…" : {
+
     },
     "Weather" : {
       "localizations" : {

@@ -16,16 +16,17 @@ extension MKLocalSearchCompletion: Identifiable {
 }
 
 struct PlacesSearchView: View {
-    var placeSearcher: PlaceSearcher
+    @Environment(\.dismissSearch) private var dismissSearch
 
-    @Binding var selectedPlace: Place?
+    var placeSearcher: PlaceSearcher
+    var forecastModel: ForecastModel
 
     var body: some View {
         List(placeSearcher.results) { result in
             Button {
                 withAnimation {
-                    placeSearcher.query = ""
-                    selectedPlace = Place(from: result)
+                    forecastModel.selectedPlace = Place(from: result)
+                    dismissSearch()
                 }
             } label: {
                 SearchResultCell(result: result)
@@ -43,5 +44,5 @@ struct PlacesSearchView: View {
 }
 
 #Preview {
-    PlacesSearchView(placeSearcher: PlaceSearcher(), selectedPlace: .constant(nil))
+    PlacesSearchView(placeSearcher: PlaceSearcher(), forecastModel: ForecastModel())
 }

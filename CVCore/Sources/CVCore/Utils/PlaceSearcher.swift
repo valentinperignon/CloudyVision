@@ -43,6 +43,7 @@ public final class PlaceSearcher: NSObject {
     }
 
     public func cancelSearch() {
+        query = ""
         completer.cancel()
     }
 }

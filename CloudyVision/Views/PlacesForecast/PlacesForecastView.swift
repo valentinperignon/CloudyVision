@@ -13,46 +13,33 @@ struct PlacesForecastView: View {
     @Environment(\.scenePhase) private var scenePhase
     @Environment(LocationManager.self) private var locationManager
 
-    @State private var selectedPlace: Place?
+    @State private var forecastModel = ForecastModel()
 
     var body: some View {
         NavigationSplitView {
-            SidebarView(selectedPlace: $selectedPlace)
+            SidebarView()
         } detail: {
-            ForecastView(place: selectedPlace ?? .appleCampus)
+            ForecastView(place: forecastModel.selectedPlace ?? .appleCampus)
         }
+        .environment(forecastModel)
         .task {
-            do {
-                try await WeatherManager.shared.refreshWeather()
-            } catch {
-                Logger.placesForecast.error("Error while refreshing weather")
-            }
+            await refreshWeather()
         }
         .onChange(of: scenePhase) {
             if scenePhase == .active {
                 locationManager.requestLocationIfPossible()
                 Task {
-                    do {
-                        try await WeatherManager.shared.refreshWeather()
-                    } catch {
-                        Logger.placesForecast.error("Error while refreshing weather")
-                    }
+                    await refreshWeather()
                 }
             }
         }
-        .onChange(of: selectedPlace) {
-            Task {
-                guard let selectedPlace else { return }
+    }
 
-                do {
-                    if selectedPlace.coordinates == nil {
-                        try await selectedPlace.fetchCoordinate()
-                    }
-                    try await WeatherManager.shared.fetchWeather(for: selectedPlace)
-                } catch {
-                    Logger.placesForecast.error("Error when user changed selected place: \(error.localizedDescription)")
-                }
-            }
+    private func refreshWeather() async {
+        do {
+            try await WeatherManager.shared.refreshWeather()
+        } catch {
+            Logger.placesForecast.error("Error while refreshing weather")
         }
     }
 }
