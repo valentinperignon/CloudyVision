@@ -9,6 +9,6 @@ import CVCore
 import Foundation
 
 @Observable
-final class ForecastModel {
+final class CloudyVisionModel {
     var selectedPlace: Place?
 }

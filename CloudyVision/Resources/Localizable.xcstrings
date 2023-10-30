@@ -2,10 +2,24 @@
   "sourceLanguage" : "en",
   "strings" : {
     "%@" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "%lld" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "Authorize Localization" : {
       "localizations" : {
@@ -13,6 +27,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Autoriser la localisation"
+          }
+        }
+      }
+    },
+    "Cloudy Vision" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
           }
         }
       }
@@ -38,6 +62,9 @@
         }
       }
     },
+    "Hello, World!" : {
+
+    },
     "Launch App" : {
       "localizations" : {
         "fr" : {
@@ -49,7 +76,14 @@
       }
     },
     "Loading" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chargement"
+          }
+        }
+      }
     },
     "Now" : {
       "localizations" : {
@@ -72,7 +106,14 @@
       }
     },
     "We analyze the weather for the next few days…" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nous analysons la météo pour les prochains jours…"
+          }
+        }
+      }
     },
     "Weather" : {
       "localizations" : {

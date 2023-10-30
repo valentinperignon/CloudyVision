@@ -10,9 +10,16 @@ import SwiftUI
 
 @main
 struct CloudyVisionApp: App {
+    @State private var appModel = CloudyVisionModel()
+
     var body: some Scene {
-        WindowGroup {
+        WindowGroup("Cloudy Vision") {
             ContentView()
+                .environment(appModel)
+        }
+
+        WindowGroup(id: "Charts") {
+
         }
     }
 }

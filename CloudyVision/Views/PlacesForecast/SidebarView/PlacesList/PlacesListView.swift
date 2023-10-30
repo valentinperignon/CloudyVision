@@ -11,7 +11,7 @@ import SwiftUI
 struct PlacesListView: View {
     @Environment(LocationManager.self) private var locationManager
 
-    @Bindable var forecastModel: ForecastModel
+    @Bindable var appModel: CloudyVisionModel
 
     private var allPlaces: [Place] {
         var list = Place.allPlaces
@@ -22,7 +22,7 @@ struct PlacesListView: View {
     }
 
     var body: some View {
-        List(allPlaces, selection: $forecastModel.selectedPlace) { place in
+        List(allPlaces, selection: $appModel.selectedPlace) { place in
             NavigationLink(value: place) {
                 PlaceCell(place: place)
             }
@@ -36,13 +36,13 @@ struct PlacesListView: View {
     }
 
     private func selectDefaultPlace() {
-        guard forecastModel.selectedPlace == nil else { return }
+        guard appModel.selectedPlace == nil else { return }
         guard locationManager.status != .authorizedWhenInUse || locationManager.currentPlace != nil else { return }
 
-        forecastModel.selectedPlace = allPlaces.first
+        appModel.selectedPlace = allPlaces.first
     }
 }
 
 #Preview {
-    PlacesListView(forecastModel: ForecastModel())
+    PlacesListView(appModel: CloudyVisionModel())
 }

@@ -11,17 +11,16 @@ import SwiftUI
 
 struct PlacesForecastView: View {
     @Environment(\.scenePhase) private var scenePhase
-    @Environment(LocationManager.self) private var locationManager
 
-    @State private var forecastModel = ForecastModel()
+    @Environment(LocationManager.self) private var locationManager
+    @Environment(CloudyVisionModel.self) private var appModel
 
     var body: some View {
         NavigationSplitView {
             SidebarView()
         } detail: {
-            ForecastView(place: forecastModel.selectedPlace ?? .appleCampus)
+            ForecastView(place: appModel.selectedPlace ?? .appleCampus)
         }
-        .environment(forecastModel)
         .task {
             await refreshWeather()
         }

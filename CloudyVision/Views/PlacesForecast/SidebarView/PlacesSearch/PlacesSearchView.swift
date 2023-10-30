@@ -18,14 +18,14 @@ extension MKLocalSearchCompletion: Identifiable {
 struct PlacesSearchView: View {
     @Environment(\.dismissSearch) private var dismissSearch
 
+    var appModel: CloudyVisionModel
     var placeSearcher: PlaceSearcher
-    var forecastModel: ForecastModel
 
     var body: some View {
         List(placeSearcher.results) { result in
             Button {
                 withAnimation {
-                    forecastModel.selectedPlace = Place(from: result)
+                    appModel.selectedPlace = Place(from: result)
                     dismissSearch()
                 }
             } label: {
@@ -44,5 +44,5 @@ struct PlacesSearchView: View {
 }
 
 #Preview {
-    PlacesSearchView(placeSearcher: PlaceSearcher(), forecastModel: ForecastModel())
+    PlacesSearchView(appModel: CloudyVisionModel(), placeSearcher: PlaceSearcher())
 }
