@@ -15,10 +15,10 @@ struct HourlyLineChart<Value: Plottable>: View {
     let yData: KeyPath<HourWeather, Value>
 
     var body: some View {
-        Chart(forecast) { weather in
+        Chart(forecast) { data in
             LineMark(
-                x: .value("Hour", weather.date.formatted(.dateTime.hour())),
-                y: .value(yLabel, weather[keyPath: yData])
+                x: .value("Hour", data.date.formatted(.dateTime.hour())),
+                y: .value(yLabel, data[keyPath: yData])
             )
             .lineStyle(StrokeStyle(lineWidth: 16))
         }

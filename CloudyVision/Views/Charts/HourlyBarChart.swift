@@ -15,10 +15,10 @@ struct HourlyBarChart<Value: Plottable>: View {
     let yData: KeyPath<HourWeather, Value>
 
     var body: some View {
-        Chart(forecast) { weather in
+        Chart(forecast) { data in
             BarMark(
-                x: .value("Hour", weather.date.formatted(.dateTime.hour())),
-                y: .value(yLabel, weather[keyPath: yData])
+                x: .value("Hour", data.date.formatted(.dateTime.hour())),
+                y: .value(yLabel, data[keyPath: yData])
             )
         }
         .chartYAxis {
