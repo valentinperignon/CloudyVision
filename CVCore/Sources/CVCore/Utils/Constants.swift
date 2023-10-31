@@ -9,6 +9,8 @@ import Foundation
 import WeatherKit
 
 public enum Constants {
+    public static let appName = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as! String
+
     public static let windowCharts = "ChartsWindow"
 
     public static func formattedTemperature(_ temperature: Measurement<UnitTemperature>) -> String {

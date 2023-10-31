@@ -17,7 +17,7 @@ struct AnimatableTitle: View, Animatable {
     }
 
     var body: some View {
-        Text(title.prefix(typingCount))
+        Text(verbatim: "\(title.prefix(typingCount))")
             .monospaced()
             .font(.system(size: 56))
     }

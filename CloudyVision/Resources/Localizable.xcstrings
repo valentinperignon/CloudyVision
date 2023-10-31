@@ -33,6 +33,7 @@
       }
     },
     "Cloudy Vision" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -178,7 +179,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Weather in a new dimension"
+            "value" : "La météo dans une nouvelle dimension"
           }
         }
       }

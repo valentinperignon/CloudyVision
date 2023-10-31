@@ -13,7 +13,7 @@ struct CloudyVisionApp: App {
     @State private var appModel = CloudyVisionModel()
 
     var body: some Scene {
-        WindowGroup("Cloudy Vision") {
+        WindowGroup(Text(verbatim: Constants.appName)) {
             ContentView()
                 .environment(appModel)
         }

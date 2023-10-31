@@ -17,8 +17,6 @@ struct OnboardingView: View {
     @State private var isShowingSubtitle = false
     @State private var isShowingButtons = false
 
-    private let appName = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as! String
-
     var body: some View {
         ZStack(alignment: .top) {
             WeatherBackgroundView()
@@ -26,7 +24,7 @@ struct OnboardingView: View {
             VStack {
                 Spacer()
 
-                AnimatableTitle(title: appName, typingCount: typingCount)
+                AnimatableTitle(title: Constants.appName, typingCount: typingCount)
 
                 Text("Weather in a new dimension")
                     .font(.title)
@@ -52,7 +50,7 @@ struct OnboardingView: View {
         }
         .onAppear {
             withAnimation(.spring(duration: OnboardingConstants.typingDuration).delay(OnboardingConstants.typingDelay)) {
-                typingCount = appName.count
+                typingCount = Constants.appName.count
             }
             withAnimation(.default.delay(OnboardingConstants.subtitleDelay)) {
                 isShowingSubtitle = true
