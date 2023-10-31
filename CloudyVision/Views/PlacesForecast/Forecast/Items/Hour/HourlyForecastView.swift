@@ -18,7 +18,9 @@ struct HourlyForecastView: View {
                     HourWeatherView(hourWeather: hourWeather)
                 }
             }
-        }   
+            .scrollTargetLayout()
+        }
         .forecastItem()
+        .scrollTargetBehavior(.viewAligned)
     }
 }
