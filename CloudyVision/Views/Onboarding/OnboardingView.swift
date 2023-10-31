@@ -49,7 +49,7 @@ struct OnboardingView: View {
             .opacity(isShowingButtons ? 1 : 0)
         }
         .onAppear {
-            withAnimation(.spring(duration: OnboardingConstants.typingDuration).delay(OnboardingConstants.typingDelay)) {
+            withAnimation(.linear(duration: OnboardingConstants.typingDuration).delay(OnboardingConstants.typingDelay)) {
                 typingCount = Constants.appName.count
             }
             withAnimation(.default.delay(OnboardingConstants.subtitleDelay)) {

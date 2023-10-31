@@ -11,10 +11,11 @@ import SwiftUI
 enum OnboardingConstants {
     // MARK: - Animations
 
-    static let typingDelay: TimeInterval = 1
+    static let typingDelay: TimeInterval = 2
     static let typingDuration: TimeInterval = 4
-    static let subtitleDelay: TimeInterval = 5
-    static let buttonsDelay: TimeInterval = 6
+    static let typingIsDone = typingDelay + typingDuration
+    static let subtitleDelay = typingIsDone
+    static let buttonsDelay = subtitleDelay + 1
 
     static let cloudsInterval = buttonsDelay
     static let sunStartAppearance = typingDuration
