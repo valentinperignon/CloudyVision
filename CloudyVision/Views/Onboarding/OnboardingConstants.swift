@@ -12,7 +12,7 @@ enum OnboardingConstants {
     // MARK: - Animations
 
     static let typingDelay: TimeInterval = 2
-    static let typingDuration: TimeInterval = 4
+    static let typingDuration: TimeInterval = 3
     static let typingIsDone = typingDelay + typingDuration
     static let subtitleDelay = typingIsDone
     static let buttonsDelay = subtitleDelay + 1

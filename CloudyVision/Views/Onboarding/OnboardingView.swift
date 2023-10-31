@@ -14,6 +14,7 @@ struct OnboardingView: View {
     @Environment(LocationManager.self) private var locationManager
 
     @State private var typingCount = 0
+    @State private var didTouchLocalizationButton = false
     @State private var isShowingSubtitle = false
     @State private var isShowingButtons = false
 
@@ -35,7 +36,7 @@ struct OnboardingView: View {
         }
         .overlay(alignment: .bottom) {
             VStack(spacing: 24) {
-                Button(action: authorizeLocalization) {
+                LoadingButton(isLoading: didTouchLocalizationButton && locationManager.status == .notDetermined, action: authorizeLocalization) {
                     Label("Authorize Localization", systemImage: "location")
                 }
                 .disabled(locationManager.status != .notDetermined)
@@ -62,6 +63,9 @@ struct OnboardingView: View {
     }
 
     private func authorizeLocalization() {
+        withAnimation {
+            didTouchLocalizationButton = true
+        }
         locationManager.requestAuthorization()
     }
 
