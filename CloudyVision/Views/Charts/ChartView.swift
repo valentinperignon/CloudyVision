@@ -23,17 +23,21 @@ struct ChartView: View {
     }
 
     var body: some View {
-        switch chartType {
-        case .feelsLike:
-            HourlyLineChart(forecast: hourlyForecast, yLabel: "Temperature", yData: \.apparentTemperature.value)
-        case .precipitations:
-            HourlyBarChart(forecast: hourlyForecast, yLabel: "Precipitation", yData: \.precipitationAmount.value)
-        case .uvIndex:
-            HourlyLineChart(forecast: hourlyForecast, yLabel: "Humidity", yData: \.uvIndex.value)
-        case .humidity:
-            HourlyBarChart(forecast: hourlyForecast, yLabel: "Humidity", yData: \.humidity)
-        case .visibility:
-            HourlyLineChart(forecast: hourlyForecast, yLabel: "Distance", yData: \.visibility.value)
+        VStack(spacing: 32) {
+            switch chartType {
+            case .feelsLike:
+                HourlyLineChart(forecast: hourlyForecast, yLabel: "Temperature", yData: \.apparentTemperature.value)
+            case .precipitations:
+                HourlyBarChart(forecast: hourlyForecast, yLabel: "Precipitation", yData: \.precipitationAmount.value)
+            case .uvIndex:
+                HourlyLineChart(forecast: hourlyForecast, yLabel: "Humidity", yData: \.uvIndex.value)
+            case .humidity:
+                HourlyBarChart(forecast: hourlyForecast, yLabel: "Humidity", yData: \.humidity)
+            case .visibility:
+                HourlyLineChart(forecast: hourlyForecast, yLabel: "Distance", yData: \.visibility.value)
+            }
+
+            ChartTitleView(title: chartType.title)
         }
     }
 }
