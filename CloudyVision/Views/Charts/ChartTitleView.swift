@@ -5,7 +5,7 @@
 //  Created by Valentin Perignon on 31/10/2023.
 //
 
-import CVCore
+import CoreVisionKit
 import SwiftUI
 
 struct ChartTitleView: View {

@@ -5,7 +5,7 @@
 //  Created by Valentin Perignon on 29/10/2023.
 //
 
-import CVCore
+import CoreVisionKit
 import SwiftUI
 
 struct ItemModifier: ViewModifier {

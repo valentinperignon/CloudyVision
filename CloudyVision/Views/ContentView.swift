@@ -5,7 +5,7 @@
 //  Created by Valentin Perignon on 08/09/2023.
 //
 
-import CVCore
+import CoreVisionKit
 import SwiftUI
 
 struct ContentView: View {

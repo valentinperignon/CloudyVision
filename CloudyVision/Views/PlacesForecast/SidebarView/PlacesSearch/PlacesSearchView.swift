@@ -5,7 +5,7 @@
 //  Created by Valentin Perignon on 15/10/2023.
 //
 
-import CVCore
+import CoreVisionKit
 import MapKit
 import SwiftUI
 

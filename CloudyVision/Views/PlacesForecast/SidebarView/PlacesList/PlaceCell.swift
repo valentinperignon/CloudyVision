@@ -6,7 +6,7 @@
 //
 
 import CoreLocation
-import CVCore
+import CoreVisionKit
 import SwiftUI
 
 struct PlaceCell: View {

@@ -24,7 +24,6 @@
 		A76180B62AAB927800B4FF27 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76180B52AAB927800B4FF27 /* ForecastView.swift */; };
 		A76180B82AAB927900B4FF27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A76180B72AAB927900B4FF27 /* Assets.xcassets */; };
 		A76180C82AABABD600B4FF27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76180C72AABABD600B4FF27 /* ContentView.swift */; };
-		A76180CD2AABAD5E00B4FF27 /* CVCore in Frameworks */ = {isa = PBXBuildFile; productRef = A76180CC2AABAD5E00B4FF27 /* CVCore */; };
 		A76180D22AABCC6E00B4FF27 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A76180D12AABCC6E00B4FF27 /* Localizable.xcstrings */; };
 		A76180D52AABDADB00B4FF27 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76180D42AABDADB00B4FF27 /* OnboardingView.swift */; };
 		A76180D82AAC771B00B4FF27 /* AnimatableTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76180D72AAC771B00B4FF27 /* AnimatableTitle.swift */; };
@@ -47,6 +46,7 @@
 		A798CD782AEFA4D4008D71A9 /* CloudyVisionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A798CD772AEFA4D4008D71A9 /* CloudyVisionModel.swift */; };
 		A798CD7A2AEFAB1B008D71A9 /* WeatherDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A798CD792AEFAB1B008D71A9 /* WeatherDataView.swift */; };
 		A798CD7C2AEFAB5B008D71A9 /* LoadingWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A798CD7B2AEFAB5B008D71A9 /* LoadingWeatherView.swift */; };
+		A7B30E602AF77B1B0088BFF6 /* CoreVisionKit in Frameworks */ = {isa = PBXBuildFile; productRef = A7B30E5F2AF77B1B0088BFF6 /* CoreVisionKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,7 +70,6 @@
 		A76180B72AAB927900B4FF27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A76180BC2AAB927900B4FF27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A76180C72AABABD600B4FF27 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		A76180CA2AABACF200B4FF27 /* CVCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CVCore; sourceTree = "<group>"; };
 		A76180D12AABCC6E00B4FF27 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		A76180D42AABDADB00B4FF27 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		A76180D72AAC771B00B4FF27 /* AnimatableTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableTitle.swift; sourceTree = "<group>"; };
@@ -93,6 +92,7 @@
 		A798CD772AEFA4D4008D71A9 /* CloudyVisionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudyVisionModel.swift; sourceTree = "<group>"; };
 		A798CD792AEFAB1B008D71A9 /* WeatherDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataView.swift; sourceTree = "<group>"; };
 		A798CD7B2AEFAB5B008D71A9 /* LoadingWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingWeatherView.swift; sourceTree = "<group>"; };
+		A7D0D36F2AF77B6900B654BA /* CloudVisionKit */ = {isa = PBXFileReference; lastKnownFileType = text; path = CloudVisionKit; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A76180CD2AABAD5E00B4FF27 /* CVCore in Frameworks */,
+				A7B30E602AF77B1B0088BFF6 /* CoreVisionKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,7 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				A76180AE2AAB927800B4FF27 /* CloudyVision */,
-				A76180CA2AABACF200B4FF27 /* CVCore */,
+				A7D0D36F2AF77B6900B654BA /* CloudVisionKit */,
 				A76180AD2AAB927800B4FF27 /* Products */,
 				A76180CB2AABAD5900B4FF27 /* Frameworks */,
 			);
@@ -325,7 +325,7 @@
 			);
 			name = CloudyVision;
 			packageProductDependencies = (
-				A76180CC2AABAD5E00B4FF27 /* CVCore */,
+				A7B30E5F2AF77B1B0088BFF6 /* CoreVisionKit */,
 			);
 			productName = CloudyVision;
 			productReference = A76180AC2AAB927800B4FF27 /* CloudyVision.app */;
@@ -624,9 +624,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A76180CC2AABAD5E00B4FF27 /* CVCore */ = {
+		A7B30E5F2AF77B1B0088BFF6 /* CoreVisionKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = CVCore;
+			productName = CoreVisionKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

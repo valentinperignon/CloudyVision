@@ -4,11 +4,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "CVCore",
+    name: "CoreVisionKit",
     products: [
-        .library(name: "CVCore", targets: ["CVCore"]),
+        .library(name: "CoreVisionKit", targets: ["CoreVisionKit"]),
     ],
     targets: [
-        .target(name: "CVCore")
+        .target(name: "CoreVisionKit")
     ]
 )
