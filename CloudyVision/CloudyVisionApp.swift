@@ -22,5 +22,25 @@ struct CloudyVisionApp: App {
             ChartView(chartType: chartType.wrappedValue ?? .feelsLike)
                 .environment(appModel)
         }
+        .chartPlacement()
+    }
+}
+
+extension Scene {
+    func chartPlacement() -> some Scene {
+        if #available(visionOS 2.0, *) {
+            return self.defaultWindowPlacement { _, context in
+                    if context.windows.count == 1, let mainWindow = context.windows.first {
+                        return WindowPlacement(.trailing(mainWindow))
+                    } else if let lastWindow = context.windows.last {
+                        return WindowPlacement(.above(lastWindow))
+                    } else {
+                        return WindowPlacement()
+                    }
+            }
+            .defaultSize(width: 600, height: 300)
+        } else {
+            return self
+        }
     }
 }

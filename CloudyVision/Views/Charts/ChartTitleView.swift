@@ -18,9 +18,7 @@ struct ChartTitleView: View {
         }
         .padding(.vertical, 16)
         .padding(.horizontal, 64)
-        .background(.regularMaterial, in: .capsule)
-        .padding(8)
-        .background(.thinMaterial, in: .capsule)
+        .glassBackgroundEffect(in: Capsule())
     }
 }
 

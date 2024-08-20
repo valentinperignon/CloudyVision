@@ -36,7 +36,9 @@ struct ChartView: View {
             case .visibility:
                 HourlyLineChart(forecast: hourlyForecast, yLabel: "Distance", yData: \.visibility.value)
             }
-
+        }
+        .padding(24)
+        .ornament(attachmentAnchor: .scene(.bottom)) {
             ChartTitleView(title: chartType.title)
         }
     }
