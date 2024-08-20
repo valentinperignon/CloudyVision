@@ -27,7 +27,7 @@ public final class WeatherManager {
         let startHour = Date.now
         let finalHour = Calendar.current.date(byAdding: .hour, value: 24, to: startHour)!
         let startDay = Date.now
-        let finalDay = Calendar.current.date(byAdding: .day, value: 10, to: startDay)!
+        let finalDay = Calendar.current.date(byAdding: .day, value: 9, to: startDay)!
 
         let (current, hourly, daily) = try await service.weather(
             for: location,

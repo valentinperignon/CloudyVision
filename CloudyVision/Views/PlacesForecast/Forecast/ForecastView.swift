@@ -15,7 +15,7 @@ struct ForecastView: View {
     let place: Place
 
     var body: some View {
-        Group {
+        ZStack {
             if let weather = place.weather {
                 WeatherDataView(weather: weather)
             } else if isLoading {
@@ -24,21 +24,20 @@ struct ForecastView: View {
                 ContentUnavailableView("Weather Unavailable", systemImage: "sun.max.trianglebadge.exclamationmark")
             }
         }
-        .navigationTitle(place.name)
-        .onChange(of: place) {
-            Task {
-                do {
-                    if place.coordinates == nil {
-                        try await place.fetchCoordinate()
-                    }
-                    isLoading = true
-                    try await WeatherManager.shared.fetchWeather(for: place)
-                } catch {
-                    Logger.placesForecast.error("Error when user changed selected place: \(error.localizedDescription)")
+        .task {
+            do {
+                if place.coordinates == nil {
+                    try await place.fetchCoordinate()
                 }
-                isLoading = false
+                isLoading = true
+                try await WeatherManager.shared.fetchWeather(for: place)
+            } catch {
+                Logger.placesForecast.error("Error when user changed selected place: \(error.localizedDescription)")
             }
+            isLoading = false
         }
+        .id(place)
+        .navigationTitle(place.name)
     }
 }
 

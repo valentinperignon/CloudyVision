@@ -9,7 +9,7 @@ import CoreVisionKit
 import SwiftUI
 
 struct OnboardingView: View {
-    @AppStorage("didLaunchedAppBefore") private var didLauchedAppBefore = false
+    @AppStorage("isFirstLaunch") private var isFirstLaunch = true
 
     @Environment(LocationManager.self) private var locationManager
 
@@ -70,7 +70,7 @@ struct OnboardingView: View {
     }
 
     private func launchApp() {
-        didLauchedAppBefore = true
+        isFirstLaunch = false
     }
 }
 

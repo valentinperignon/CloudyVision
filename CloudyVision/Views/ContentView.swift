@@ -9,20 +9,19 @@ import CoreVisionKit
 import SwiftUI
 
 struct ContentView: View {
-    @AppStorage("didLaunchedAppBefore") private var didLauchedAppBefore = false
+    @AppStorage("isFirstLaunch") private var isFirstLaunch = true
 
     @State private var locationManager = LocationManager()
 
     var body: some View {
-        Group {
-            if didLauchedAppBefore {
-                PlacesForecastView()
-            } else {
+        ZStack {
+            if isFirstLaunch {
                 OnboardingView()
+            } else {
+                PlacesForecastView()
             }
         }
         .environment(locationManager)
-        
     }
 }
 
